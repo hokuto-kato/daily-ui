@@ -7,7 +7,7 @@ $ yarn dev
 ```
 
 # build
-1. `webpack.common.js`の`dailyID`を変更。
+1. 各設定ファイルの`dailyID`を変更。
 2. 下記のビルドコマンドで`./docs/`内にビルド。
 ```
 $ yarn build

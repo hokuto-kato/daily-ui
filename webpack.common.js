@@ -1,14 +1,12 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin")
 const HtmlWebpackHarddiskPlugin = require("html-webpack-harddisk-plugin")
-const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const globule = require("globule")
 const copyPlugin = require("copy-webpack-plugin")
 const pug = globule.find("./src/pug/*.pug", {
 	ignore: ["./src/pug/include/*.pug"],
 })
-const dailyId = "01"
-const buildPath = `${__dirname}/docs/${dailyId}/`
-const buildPathRoot = `${__dirname}/docs/`
+const dailyID = "01"
+const buildPath = `${__dirname}/docs/${dailyID}/`
 
 const app = {
 	target: ["web", "es6"],
@@ -19,11 +17,6 @@ const app = {
 	},
 	entry: {
 		app: `./src/js/app.js`,
-	},
-	output: {
-		clean: true,
-		path: buildPath,
-		filename: "./js/[name].[contenthash].js",
 	},
 	module: {
 		rules: [
@@ -37,15 +30,14 @@ const app = {
 		],
 	},
 	plugins: [
-		new HtmlWebpackHarddiskPlugin(),
-		new MiniCssExtractPlugin({
-			filename: "./css/[name].[contenthash].css",
+		new HtmlWebpackHarddiskPlugin({
+			outputPath: `${buildPath}`
 		}),
 		new copyPlugin({
 			patterns: [
 				{
 					from: `${__dirname}/src/favicon/favicon.ico`,
-					to: buildPathRoot,
+					to: `${buildPath}/favicon/`,
 				},
 			],
 		}),
@@ -68,3 +60,4 @@ pug.forEach((template) => {
 })
 
 module.exports = app
+exports.id = dailyID

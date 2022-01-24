@@ -1,8 +1,11 @@
 const { merge } = require('webpack-merge')
-const common = require('./webpack.common.js')
+const common = require('./webpack.common')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const autoprefixer = require('autoprefixer')
 const TerserPlugin = require('terser-webpack-plugin')
+const copyPlugin = require("copy-webpack-plugin")
+const dailyID = "01"
+const buildPath = `${__dirname}/docs/${dailyID}/`
 
 module.exports = merge(common, {
 	mode: 'development',
@@ -17,6 +20,11 @@ module.exports = merge(common, {
 			},
 			extractComments: true
 		})]
+	},
+	output: {
+		clean: true,
+		path: buildPath,
+		filename: "./js/[name].js",
 	},
 	module: {
 		rules: [
@@ -86,4 +94,17 @@ module.exports = merge(common, {
 			},
 		],
 	},
+	plugins: [
+		new MiniCssExtractPlugin({
+			filename: "./css/[name].css",
+		}),
+		new copyPlugin({
+			patterns: [
+				{
+					from: `${__dirname}/src/favicon/favicon.ico`,
+					to: `${buildPath}/favicon/`,
+				},
+			],
+		}),
+	],
 })
