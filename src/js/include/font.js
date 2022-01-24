@@ -34,6 +34,6 @@ export default function () {
 	// adobe font ロード完了後にページを表示する設定のため
 	// 低速回線用に3秒後にページを表示させるためのclassをhtmlタグに付与
 	setTimeout(() => {
-		$("html")[0].addClass("loading-delay")
+		$("html").addClass("loading-delay")
 	}, 3000)
 }
