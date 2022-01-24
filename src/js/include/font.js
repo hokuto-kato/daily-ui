@@ -2,7 +2,7 @@ import $ from "jquery"
 export default function () {
 	// adobe font
 	(function(d) {
-		var config = {
+		let config = {
 				kitId: 'tlm4ljk',
 				scriptTimeout: 3000,
 				async: true
