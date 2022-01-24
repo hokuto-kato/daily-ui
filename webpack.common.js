@@ -8,6 +8,7 @@ const pug = globule.find("./src/pug/*.pug", {
 })
 const dailyId = "01"
 const buildPath = `${__dirname}/docs/${dailyId}/`
+const buildPathRoot = `${__dirname}/docs/`
 
 const app = {
 	target: ["web", "es6"],
@@ -44,7 +45,7 @@ const app = {
 			patterns: [
 				{
 					from: `${__dirname}/src/favicon/favicon.ico`,
-					to: buildPath,
+					to: buildPathRoot,
 				},
 			],
 		}),
