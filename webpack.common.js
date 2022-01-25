@@ -5,7 +5,7 @@ const copyPlugin = require("copy-webpack-plugin")
 const pug = globule.find("./src/pug/*.pug", {
 	ignore: ["./src/pug/include/*.pug"],
 })
-const dailyID = "01"
+const dailyID = "02"
 const buildPath = `${__dirname}/docs/${dailyID}/`
 
 const app = {
@@ -18,20 +18,16 @@ const app = {
 	entry: {
 		app: `./src/js/app.js`,
 	},
-	module: {
-		rules: [
-			{
-				test: /\.pug$/i,
-				loader: "pug-loader",
-				options: {
-					pretty: true,
-				},
-			},
-		],
+	resolve: {
+		extensions: [".js", ".json", ".scss", ".css", ".pug", ".html"],
+		alias: {
+			"~": `${__dirname}/src`,
+		},
+		roots: [`${__dirname}/src`],
 	},
 	plugins: [
 		new HtmlWebpackHarddiskPlugin({
-			outputPath: `${buildPath}`
+			outputPath: buildPath
 		}),
 		new copyPlugin({
 			patterns: [
@@ -52,12 +48,10 @@ pug.forEach((template) => {
 		new HtmlWebpackPlugin({
 			filename: `${fileName}`,
 			template: template,
-			inject: true, //jsとcssの読み込みを挿入するか
-			minify: true, //圧縮する
+			inject: true, //jsとcssの読み込みを挿入する
 			alwaysWriteToDisk: true,
 		}),
 	)
 })
 
 module.exports = app
-exports.id = dailyID

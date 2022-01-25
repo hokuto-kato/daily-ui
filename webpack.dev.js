@@ -1,25 +1,27 @@
-const { merge } = require('webpack-merge')
-const common = require('./webpack.common')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const autoprefixer = require('autoprefixer')
-const TerserPlugin = require('terser-webpack-plugin')
+const { merge } = require("webpack-merge")
+const common = require("./webpack.common")
+const MiniCssExtractPlugin = require("mini-css-extract-plugin")
+const autoprefixer = require("autoprefixer")
+const TerserPlugin = require("terser-webpack-plugin")
 const copyPlugin = require("copy-webpack-plugin")
-const dailyID = "01"
+const dailyID = "02"
 const buildPath = `${__dirname}/docs/${dailyID}/`
 
 module.exports = merge(common, {
-	mode: 'development',
-	devtool: 'inline-source-map',
+	mode: "development",
+	devtool: "inline-source-map",
 	optimization: {
 		minimize: false,
-		minimizer: [new TerserPlugin({
-			terserOptions: {
-				format: {
-					comments: true,
-				}
-			},
-			extractComments: true
-		})]
+		minimizer: [
+			new TerserPlugin({
+				terserOptions: {
+					format: {
+						comments: true,
+					},
+				},
+				extractComments: true,
+			}),
+		],
 	},
 	output: {
 		clean: true,
@@ -30,9 +32,9 @@ module.exports = merge(common, {
 		rules: [
 			{
 				test: /\.(jpe?g|png|gif|svg)$/i,
-				type: 'asset/resource',
+				type: "asset/resource",
 				generator: {
-					filename: './img/[name][ext]',
+					filename: "./img/[name][ext]",
 				},
 			},
 			{
@@ -42,7 +44,7 @@ module.exports = merge(common, {
 						loader: MiniCssExtractPlugin.loader,
 					},
 					{
-						loader: 'css-loader',
+						loader: "css-loader",
 						options: {
 							url: true,
 							sourceMap: true,
@@ -50,7 +52,7 @@ module.exports = merge(common, {
 						},
 					},
 					{
-						loader: 'postcss-loader',
+						loader: "postcss-loader",
 						options: {
 							postcssOptions: {
 								plugins: [
@@ -63,7 +65,7 @@ module.exports = merge(common, {
 						},
 					},
 					{
-						loader: 'sass-loader',
+						loader: "sass-loader",
 						options: {
 							sourceMap: true,
 						},
@@ -72,14 +74,14 @@ module.exports = merge(common, {
 			},
 			{
 				test: /\.js$/i,
-				loader: 'babel-loader',
+				loader: "babel-loader",
 				options: {
-					presets: ['@babel/preset-env'],
+					presets: ["@babel/preset-env"],
 				},
 			},
 			{
 				test: /\.html$/i,
-				loader: 'html-loader',
+				loader: "html-loader",
 			},
 			{
 				test: /\.css$/i,
@@ -88,9 +90,16 @@ module.exports = merge(common, {
 						loader: MiniCssExtractPlugin.loader,
 					},
 					{
-						loader: 'css-loader',
+						loader: "css-loader",
 					},
 				],
+			},
+			{
+				test: /\.pug$/i,
+				loader: "pug-loader",
+				options: {
+					pretty: true,
+				},
 			},
 		],
 	},

@@ -1,0 +1,33 @@
+doctype html
+head
+	meta(charset="UTF-8")
+	meta(name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0")
+	meta(http-equiv="X-UA-Compatible" content="ie=edge")
+	link(rel="shortcut icon" type="image/x-icon" href="./favicon/favicon.ico")
+	title Daily UI - 01
+body
+	section.main
+		h1.main__heading Daily UI
+		h2.main__sub-heading 01
+		p.main__text
+			| SCROLL
+			span.main__border
+		.main__menu(data-trigger-menu)
+			p.main__menu-title MENU
+			.main__menu-content(data-target-menu)
+				.main__menu-line.main__menu-line-01(data-target-menu-child)
+				.main__menu-line.main__menu-line-02(data-target-menu-child)
+				.main__menu-line.main__menu-line-03(data-target-menu-child)
+			nav.main__menu-nav(data-target-menu-child)
+				ul.main__menu-list
+					li.main__menu-list-item TOP
+					li.main__menu-list-item CONCEPT
+					li.main__menu-list-item NEWS
+					li.main__menu-list-item PRODUCTS
+					li.main__menu-list-item CONTACT
+	section.info
+		.info__content
+			h1.info__heading NEWS
+			dl.info__list
+				dt.info__list-title 2019.04.29
+				dd.info__list-body 今日は平成最後の月曜日です。これからのんびりと、UIを作ります。
