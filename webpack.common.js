@@ -5,7 +5,7 @@ const copyPlugin = require("copy-webpack-plugin")
 const pug = globule.find("./src/pug/*.pug", {
 	ignore: ["./src/pug/include/*.pug"],
 })
-const dailyID = "02"
+const dailyID = "03"
 const buildPath = `${__dirname}/docs/${dailyID}/`
 
 const app = {
@@ -21,7 +21,7 @@ const app = {
 	resolve: {
 		extensions: [".js", ".json", ".scss", ".css", ".pug", ".html"],
 		alias: {
-			"~": `${__dirname}/src`,
+			'~': `${__dirname}/src`
 		},
 		roots: [`${__dirname}/src`],
 	},

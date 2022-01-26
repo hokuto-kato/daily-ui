@@ -4540,6 +4540,11 @@ postcss@^8.2.15:
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
 
+preloadjs@^1.0.1:
+  version "1.0.1"
+  resolved "https://registry.yarnpkg.com/preloadjs/-/preloadjs-1.0.1.tgz#71d14e94a8c94b1f6def2b01891d6bcd7e788c5d"
+  integrity sha512-XwdxL9bfoq9abJU4lVBJDVgbxWvQOk/BbuwXKEEG5BaduY7S8N1VXX4My5PM/UwW6Xf4uWAvWzwWlzb20uECxQ==
+
 prepend-http@^1.0.1:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/prepend-http/-/prepend-http-1.0.4.tgz#d4f4562b0ce3696e41ac52d0e002e57a635dc6dc"
@@ -5902,6 +5907,11 @@ web-streams-polyfill@^3.0.3:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/web-streams-polyfill/-/web-streams-polyfill-3.2.0.tgz#a6b74026b38e4885869fb5c589e90b95ccfc7965"
   integrity sha512-EqPmREeOzttaLRm5HS7io98goBgZ7IVz79aDvqjD0kYXLtFZTc0T/U6wHTPKyIjb+MdN7DFIIX6hgdBEpWmfPA==
+
+webfontloader@^1.6.28:
+  version "1.6.28"
+  resolved "https://registry.yarnpkg.com/webfontloader/-/webfontloader-1.6.28.tgz#db786129253cb6e8eae54c2fb05f870af6675bae"
+  integrity sha1-23hhKSU8tujq5UwvsF+HCvZnW64=
 
 webpack-cli@^4.9.1:
   version "4.9.2"

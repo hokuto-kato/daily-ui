@@ -1,0 +1,31 @@
+@import "destyle.css"
+@import "./base.sass"
+@import "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+=heading()
+	font-family: Calibri, sans-serif
+	font-size: 7.2rem
+	font-weight: bold
+	font-style: italic
+	color: #333
+.slick-list
+	cursor: grabbing
+.main
+	width: 1280px
+	margin: 150px auto 0
+	position: relative
+	&__heading
+		position: absolute
+		top: -90px
+		left: 160px
+		+heading()
+		&--sub
+			position: absolute
+			bottom: -83px
+			right: 164px
+			+heading()
+	&__carousel
+		&-item
+			width: 950px !important
+			margin: 0 40px
+		&-image
+			margin: 0 auto
