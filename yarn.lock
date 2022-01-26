@@ -4540,6 +4540,11 @@ postcss@^8.2.15:
     picocolors "^1.0.0"
     source-map-js "^1.0.1"
 
+preload-js@^0.6.3:
+  version "0.6.3"
+  resolved "https://registry.yarnpkg.com/preload-js/-/preload-js-0.6.3.tgz#dcb4b7c0e182dbbce2677ad4f2cfaee2e25b4df7"
+  integrity sha1-3LS3wOGC27ziZ3rU8s+u4uJbTfc=
+
 preloadjs@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/preloadjs/-/preloadjs-1.0.1.tgz#71d14e94a8c94b1f6def2b01891d6bcd7e788c5d"

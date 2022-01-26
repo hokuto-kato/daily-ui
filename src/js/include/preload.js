@@ -1,5 +1,6 @@
 import $ from "jquery"
 import img from "~/img/img.jpg"
+import createjs from "preload-js"
 
 // 読み込む外部ファイル情報
 const manifest = [
@@ -55,6 +56,6 @@ export default function () {
 				add($progressBarWrap).
 				add($img).
 				addClass("complete")
-		}, 800)
+		}, 500)
 	}
 }
