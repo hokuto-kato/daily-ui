@@ -12,14 +12,14 @@ export default function () {
 	})(document);
 
 	Typekit.load({
-		loading: function() {
+		loading: function () {
 			console.log("loading")
 		},
-		active: function() {
+		active: function () {
 			console.log("active")
 			preload()
 		},
-		inactive: function() {
+		inactive: function () {
 			console.log("inactive")
 			$("html").addClass("loading-delay")
 			preload()

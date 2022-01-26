@@ -7,6 +7,8 @@ const pug = globule.find("./src/pug/*.pug", {
 })
 const dailyID = "03"
 const buildPath = `${__dirname}/docs/${dailyID}/`
+const yellow = "\u001b[33m"
+console.log(`${yellow}daily ID = ${dailyID}`)
 
 const app = {
 	target: ["web", "es6"],
@@ -21,13 +23,13 @@ const app = {
 	resolve: {
 		extensions: [".js", ".json", ".scss", ".css", ".pug", ".html"],
 		alias: {
-			'~': `${__dirname}/src`
+			"~": `${__dirname}/src`,
 		},
 		roots: [`${__dirname}/src`],
 	},
 	plugins: [
 		new HtmlWebpackHarddiskPlugin({
-			outputPath: buildPath
+			outputPath: buildPath,
 		}),
 		new copyPlugin({
 			patterns: [
@@ -42,8 +44,7 @@ const app = {
 
 //pugファイルがある分だけhtmlに変換する
 pug.forEach((template) => {
-	const fileName = template.replace("./src/pug/", "").
-		replace(".pug", ".html")
+	const fileName = template.replace("./src/pug/", "").replace(".pug", ".html")
 	app.plugins.push(
 		new HtmlWebpackPlugin({
 			filename: `${fileName}`,
