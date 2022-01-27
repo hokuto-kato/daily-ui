@@ -27,3 +27,8 @@ https://www.dropbox.com/s/oxthap2x9hf25f8/02.mp4
 device = " 📱 "   
 https://hokuto-kato.github.io/daily-ui/03/  
 https://www.dropbox.com/s/mihcqplu9ouw8l6/03.mp4
+
+# day04 
+device = " 📱 "   
+https://hokuto-kato.github.io/daily-ui/04/  
+https://www.dropbox.com/s/l60dlhwygeqmxyx/04.mp4

@@ -7,7 +7,7 @@ const manifest = [
 	{ src: img }, // Image
 ]
 
-export default function () {
+export default function() {
 	// LoadQueueクラス
 	const loadQueue = new createjs.LoadQueue()
 	// セレクタ
@@ -34,11 +34,12 @@ export default function () {
 		const progress = event.progress
 		// 0~100に変換
 		const percent = Math.floor(event.progress * 100)
-		$($progressNumber).text(percent).css({
-			opacity: `calc(${progress} + 0.2)`,
-			transform: `translate(-50%, -50%) rotate(${percent *
-			3.6}deg)`,
-		})
+		$($progressNumber)
+			.text(percent)
+			.css({
+				opacity: `calc(${progress} + 0.2)`,
+				transform: `translate(-50%, -50%) rotate(${percent * 3.6}deg)`,
+			})
 		$($progressBar).css({
 			opacity: `calc(${progress} + 0.2)`,
 			width: `${percent}%`,
@@ -52,10 +53,13 @@ export default function () {
 
 	function handleComplete() {
 		setTimeout(() => {
-			$($progressNumber).
-				add($progressBarWrap).
-				add($img).
-				addClass("complete")
+			$($progressNumber)
+				.add($progressBarWrap)
+				.add($img)
+				.addClass("complete")
+				.on("transitionend", () => {
+					$($progressNumber).add($progressBarWrap).remove()
+				})
 		}, 500)
 	}
 }
