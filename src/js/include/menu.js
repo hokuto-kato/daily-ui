@@ -1,22 +1,18 @@
 import $ from "jquery"
+export default function () {
+	const $trigger = $("[data-trigger-menu]")
+	const $targetMenu = $("[data-target-menu]")
+	const $targetMenuChild = $("[data-target-menu-child]")
 
-const $menuTrigger = $("[data-trigger-menu]")
-const $menuTarget = $("[data-target-menu]")
-
-export default function() {
-	$menuTrigger.on("click", (e) => {
-		if ($(e.currentTarget).hasClass("active")) {
-			//非アクティブ
-			$(e.currentTarget).add($menuTarget).removeClass("active")
-			$menuTarget.one("transitionend", (e) => {
-				$(e.currentTarget).addClass("visually-hidden")
-				$('body').removeClass("menu-open")
+	$($trigger).on("click", () => {
+		if ($targetMenu.hasClass("active")) {
+			$($targetMenu).removeClass("active").addClass("close")
+			$($targetMenu).on("animationend", () =>{
+				$($targetMenu).removeClass("close")
 			})
+			$($targetMenuChild).removeClass("active")
 		} else {
-			//アクティブ
-			$(e.currentTarget).addClass("active")
-			$($menuTarget).removeClass("visually-hidden").addClass("active")
-			$('body').addClass("menu-open")
+			$($targetMenu).add($targetMenuChild).addClass("active")
 		}
 	})
 }

@@ -1,4 +1,4 @@
-- contentName = "Daily UI - 04"
+- contentName = "Daily UI - 01"
 doctype html
 html(lang="ja")
 	head
@@ -9,36 +9,28 @@ html(lang="ja")
 		link(rel="shortcut icon" type="image/x-icon" href="./favicon/favicon.ico")
 		title !{contentName}
 	body
-		main.container
-			section.main
-				h1.main__title Daily UI
-				h2.main__title--sub(data-dailyid)
-					span.main__title--sub-body 04
-				.main__menu(data-trigger-menu)
-					.main__menu-line(data-menu-line)
-					.main__menu-line(data-menu-line)
-				nav.main__nav.visually-hidden(data-target-menu)
-					ul.main__nav-list
-						li.main__nav-list-item 坊っちゃん
-						li.main__nav-list-item 吾輩は猫である
-						li.main__nav-list-item 草枕
-						li.main__nav-list-item 三四郎
-						li.main__nav-list-item 虞美人草
-			section.content
-				h3.content__heading 坊っちゃん
-				p.content__body
-					| 親譲りの無鉄砲で小供の時から損ばかりしている。
-				p.content__body
-					| 小学校に居る時分学校の二階から飛び降りて一週間ほど腰を抜かした事がある。
-				p.content__body
-					| なぜそんな無闇をしたと聞く人があるかも知れぬ。
-				p.content__body
-					| 別段深い理由でもない。
-				p.content__body
-					| 新築の二階から首を出していたら、同級生の一人が冗談に、いくら威張っても、そこから飛び降りる事は出来まい。
-				p.content__body
-					| 弱虫やーい。
-				p.content__body
-					| と囃したからである。
-				p.content__body
-					| 小使に負ぶさって帰って来た時、おやじが大きな眼をして二階ぐらいから飛び降りて腰を抜かす奴があるかと云ったから、この次は抜かさずに飛んで見せますと答えた。（青空文庫より）
+		section.main
+			h1.main__heading Daily UI
+			h2.main__sub-heading 01
+			p.main__text
+				| SCROLL
+				span.main__border
+			.main__menu(data-trigger-menu)
+				p.main__menu-title MENU
+				.main__menu-content(data-target-menu)
+					.main__menu-line.main__menu-line-01(data-target-menu-child)
+					.main__menu-line.main__menu-line-02(data-target-menu-child)
+					.main__menu-line.main__menu-line-03(data-target-menu-child)
+				nav.main__menu-nav(data-target-menu-child)
+					ul.main__menu-list
+						li.main__menu-list-item TOP
+						li.main__menu-list-item CONCEPT
+						li.main__menu-list-item NEWS
+						li.main__menu-list-item PRODUCTS
+						li.main__menu-list-item CONTACT
+		section.info
+			.info__content
+				h1.info__heading NEWS
+				dl.info__list
+					dt.info__list-title 2019.04.29
+					dd.info__list-body 今日は平成最後の月曜日です。これからのんびりと、UIを作ります。

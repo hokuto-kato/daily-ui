@@ -1,6 +1,151 @@
 @import "destyle.css"
-@import "./base.sass"
-@import "./mixin.sass"
-@import "./keyframe.sass"
-@import "./utility.sass"
-@import "./project.sass"
+@import "base"
+@import "keyframe"
+
+=heading()
+	font-size: 7.2rem
+	font-family: calibri, sans-serif
+	font-style: italic
+	font-weight: 700
+	color: #272727
+.main
+	background-image: url("../img/dog.jpg")
+	background-size: cover
+	width: 950px
+	height: 500px
+	margin: 230px auto 0
+	position: relative
+	&__heading
+		+heading()
+		transform: translate(-42px, -52px)
+	&__sub-heading
+		+heading()
+		position: absolute
+		right: 0
+		bottom: 0
+		transform: translate(28px, 27px)
+	&__text
+		font-family: Calibri, sans-serif
+		font-size: 1.4rem
+		font-weight: bold
+		letter-spacing: .269rem
+		color: #333
+		writing-mode: vertical-rl
+		position: absolute
+		right: -8.4rem
+		bottom: -7.7rem
+		display: flex
+		align-items: center
+	&__border
+		height: 10px
+		margin-top: 20px
+		width: 1px
+		background: #909090
+	&__menu
+		position: absolute
+		right: 22px
+		top: 42px
+		display: flex
+		flex-direction: column
+		align-items: center
+		user-select: none
+		&:hover
+			cursor: pointer
+		&-title
+			font-family: Calibri, sans-serif
+			font-size: 1.4rem
+			font-weight: bold
+			letter-spacing: 2.1px
+			color: #333
+			position: absolute
+			right: -3px
+			top: -19px
+		&-content
+			width: 42px
+			height: 32px
+			border-radius: 2px
+			background-color: rgba(51, 51, 51, .7)
+			position: relative
+			&.close
+				animation: menu-close .7s
+			&.active
+				width: 813px
+				transition: all .4s cubic-bezier(.5, 0, 1, 1)
+				animation: none
+				& .main__menu-line-01
+					top: 15px
+				& .main__menu-line-03
+					top: 15px
+		&-line
+			width: 18px
+			height: 2px
+			background-color: #fff
+			position: absolute
+			right: 12px
+			transition: all .4s cubic-bezier(.5, 0, 1, 1)
+			&-01
+				top: 9px
+			&-02
+				top: 15px
+			&-03
+				top: 21px
+		&-nav
+			height: 100%
+			visibility: hidden
+			opacity: 0
+			transition: all .1s cubic-bezier(.5, 0, 1, 1)
+			position: absolute
+			right: 108px
+			top: 0
+			&.active
+				transition: all .4s cubic-bezier(1, 0, 1, 1)
+				visibility: visible
+				opacity: 1
+		&-list
+			display: flex
+			align-items: center
+			height: 100%
+			&-item
+				color: #fff
+				font-family: calibri, sans-serif
+				letter-spacing: 1.5px
+				margin-left: 80px
+				font-size: 1.5rem
+.info
+	&__content
+		display: flex
+		border-radius: 5px
+		border: 1px solid #eee
+		background-color: #fff
+		width: 720px
+		margin: 0 auto
+		transform: translateY(-40px)
+		padding: 20px 40px
+	&__heading
+		font-size: 1.6rem
+		font-family: calibri, sans-serif
+		font-weight: bold
+		padding-right: 40px
+		display: flex
+		align-items: center
+		letter-spacing: .3rem
+		min-height: 105px
+		border-right: 1px dashed #ddd
+	&__list
+		padding: 0 40px
+		display: flex
+		flex-direction: column
+		justify-content: center
+		transform: translateY(-1rem)
+		&-title
+			font-family: tbudrgothic-std, sans-serif
+			font-weight: normal
+			font-size: 1.1rem
+			color: #909090
+			align-items: center
+		&-body
+			font-family: tbudrgothic-std, sans-serif
+			font-weight: 400
+			color: #333
+			font-size: 1.3rem
+			margin-top: 10px
