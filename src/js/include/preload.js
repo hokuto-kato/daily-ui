@@ -48,6 +48,7 @@ export default function() {
 
 	function handleFileLoadComplete(event) {
 		const result = event.result
+		$(result).attr("alt","イメージ01")
 		$($img).append(result)
 	}
 

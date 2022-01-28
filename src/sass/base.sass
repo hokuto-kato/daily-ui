@@ -1,5 +1,6 @@
 html
 	font-size: 62.5%
-	visibility: hidden
+	opacity: 0
 	&.wf-active, &.loading-delay
-		visibility: visible
+		transition: opacity .2s ease-in
+		opacity: 1

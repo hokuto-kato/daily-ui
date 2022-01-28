@@ -1,27 +1,58 @@
 @import "destyle.css"
 @import "./base"
 @import "./mixin"
-@import "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
 
-.slick-list
-	cursor: grabbing
 .main
-	width: 1280px
-	margin: 150px auto 0
+	padding: 30px 20px 0
 	position: relative
-	&__heading
-		position: absolute
-		top: -90px
-		left: 160px
+	@include mq-min("710px")
+		width: 710px
+		margin: 0 auto
+	&__title
 		@include heading()
-		&--sub
-			position: absolute
-			bottom: -83px
-			right: 164px
-			@include heading()
-	&__carousel
-		&-item
-			width: 950px !important
-			margin: 0 40px
-		&-image
-			margin: 0 auto
+	&__img
+		display: block
+		width: 100%
+		aspect-ratio: 11 / 17
+		margin-top: 15px
+		opacity: 0
+		img
+			width: 100%
+		&.complete
+			transition: all .8s ease-in
+			opacity: 1
+.progress
+	&__container
+		display: flex
+		align-items: center
+		margin-top: 15px
+	&__daily-id
+		+heading()
+		margin-left: auto
+	&__bar
+		background-color: #333
+		width: 0
+		height: 9px
+		border-radius: 4.5px
+		transition: all .2s ease-in
+		opacity: 0
+		&-wrap
+			width: 85%
+			&.complete
+				transition: all .2s ease-in
+				opacity: 0
+	&__number
+		position: absolute
+		top: 50%
+		left: 50%
+		transform: translate(-50%, -50%)
+		color: #333
+		font-family: Calibri, sans-serif
+		font-style: italic
+		font-weight: bold
+		font-size: 10rem
+		transition: all .2s ease-in
+		opacity: 0
+		&.complete
+			opacity: 0 !important
+			transition: all .2s ease-in

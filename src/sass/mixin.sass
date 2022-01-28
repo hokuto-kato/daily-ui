@@ -1,6 +1,10 @@
+@mixin mq-min($breakpoint)
+	@media screen and (min-width: $breakpoint)
+		@content
+
 @mixin heading()
 	font-family: Calibri, sans-serif
-	font-size: 7.2rem
+	font-size: 3.2rem
 	font-weight: bold
 	font-style: italic
 	color: #333
