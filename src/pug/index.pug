@@ -1,4 +1,4 @@
-- contentName = "Daily UI - 01"
+- contentName = "Daily UI - 02"
 doctype html
 html(lang="ja")
 	head
@@ -11,26 +11,11 @@ html(lang="ja")
 	body
 		section.main
 			h1.main__heading Daily UI
-			h2.main__sub-heading 01
-			p.main__text
-				| SCROLL
-				span.main__border
-			.main__menu(data-trigger-menu)
-				p.main__menu-title MENU
-				.main__menu-content(data-target-menu)
-					.main__menu-line.main__menu-line-01(data-target-menu-child)
-					.main__menu-line.main__menu-line-02(data-target-menu-child)
-					.main__menu-line.main__menu-line-03(data-target-menu-child)
-				nav.main__menu-nav.visually-hidden(data-target-nav)
-					ul.main__menu-list
-						li.main__menu-list-item TOP
-						li.main__menu-list-item CONCEPT
-						li.main__menu-list-item NEWS
-						li.main__menu-list-item PRODUCTS
-						li.main__menu-list-item CONTACT
-		section.info
-			.info__content
-				h1.info__heading NEWS
-				dl.info__list
-					dt.info__list-title 2019.04.29
-					dd.info__list-body 今日は平成最後の月曜日です。これからのんびりと、UIを作ります。
+			h2.main__heading--sub 02
+			.main__carousel(data-carousel)
+				.main__carousel-item
+					img.main__carousel-image(src=require("~/img/dog01.jpg") alt="犬のイメージ01")
+				.main__carousel-item
+					img.main__carousel-image(src=require("~/img/dog02.jpg") alt="犬のイメージ02")
+				.main__carousel-item
+					img.main__carousel-image(src=require("~/img/dog03.jpg") alt="犬のイメージ03")

@@ -1,9 +1,9 @@
 import $ from "jquery"
 export default function () {
-	// adobe font
+	// // adobe font
 	(function(d) {
 		let config = {
-				kitId: 'tlm4ljk',
+				kitId: 'rwe8vjc',
 				scriptTimeout: 3000,
 				async: true
 			},

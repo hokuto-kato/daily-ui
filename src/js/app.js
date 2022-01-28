@@ -1,9 +1,9 @@
 import $ from "jquery"
 import sass from "../sass/app.sass"
 import font from "./include/font"
-import menu from "./include/menu"
+import carousel from "./include/carousel"
 
-$(()=>{
+$(() => {
 	font()
-	menu()
+	carousel()
 })
