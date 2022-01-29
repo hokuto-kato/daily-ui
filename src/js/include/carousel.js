@@ -31,13 +31,10 @@ export default function() {
 		dots: true,
 		dotsClass: "carousel__indicator--dot-body",
 		appendDots: $carouselDot,
-		variableWidth: false,
 		centerPadding: "10%",
-		centerMode: false,
-		slidesToShow: true,
 		arrows: false,
-		customPaging: function(slider, i) {
-			return $(`<button type="button" />`)
+		customPaging: function() {
+			return $(`<button type="button">`)
 		},
 	})
 }

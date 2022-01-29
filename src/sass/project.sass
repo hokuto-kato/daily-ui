@@ -1,97 +1,78 @@
 .container
-	@include mq-min("700px")
-		width: 700px
-		margin: 0 auto
+	background-color: #fafafa
+.content
+	padding: 20px 0 0 20px
 .main
-	background-image: url("../img/img.png")
-	background-size: cover
-	padding: 15px 15px 0
 	position: relative
-	&:after
-		content: ''
-		display: block
-		padding-top: 95.4106280193%
+	@include mq-min("650px")
+		width: 650px
+		margin: 0 auto
 	&__title
 		@include heading()
 		&--sub
-			position: fixed
-			bottom: 0
-			right: 0
-			width: 73px
-			height: 60px
-			background-color: rgba(#fff, .7)
-			display: flex
-			justify-content: center
-			align-items: center
-			@include mq-min("700px")
-				right: 50%
-				transform: translateX(350px)
-			&-body
-				@include heading()
-	&__menu
-		position: absolute
-		top: 25px
-		right: 25px
-		z-index: 2
-		width: 20px
-		height: 20px
+			@include heading()
+			position: absolute
+			right: 20px
+			bottom: -12px
+.carousel
+	margin-top: 25px
+	&__img
+		width: 100%
+		vertical-align: top
+	&__indicator
+			&--num
+				position: relative
+				overflow: hidden
+				width: 60px
+				height: 60px
+				margin-top: -42px
+				background-color: #fff
+				&:after
+					content: ''
+					display: block
+					position: absolute
+					left: 0
+					bottom: 0
+					border-top: 30px solid transparent
+					border-left: 30px solid transparent
+					border-right: 30px solid #000
+					border-bottom: 30px solid #000
+					z-index: 1
+				&-index
+					font-weight: bold
+					font-style: italic
+					color: #333
+					font-size: 2.2rem
+					position: relative
+					z-index: 2
+					padding: 3px 0 0 5px
+					font-family: calibri, sans-serif
+				&-count
+					font-weight: bold
+					font-style: italic
+					color: #fff
+					font-size: 1.8rem
+					text-align: right
+					position: absolute
+					right: 7px
+					bottom: 7px
+					z-index: 2
+					font-family: calibri, sans-serif
+	&__indicator--dot-body
+		width: 100%
 		display: flex
-		flex-direction: column
-		align-items: center
 		justify-content: center
-		&.active
-			& .main__menu-line
-				&:nth-child(1)
-					background-color: #fff
-					transform: rotate(-315deg)
-					position: relative
-					top: 2px
-				&:nth-child(2)
-					background-color: #fff
-					transform: rotate(-225deg)
-					position: relative
-					margin-top: 0
-		&-line
-			width: 20px
-			height: 2px
-			background-color: #333
-			transition: transform .4s ease-out
+		margin-top: 35px
+		li
+			width: 10px
+			height: 10px
+			background-color: #C2C2C2
+			border-radius: 50%
 			&:nth-child(n+2)
-				margin-top: 5px
-	&__nav
-		opacity: 0
-		width: 100vw
-		height: 100vh
-		background-color: #333
-		position: fixed
-		top: 0
-		left: 0
-		z-index: 1
-		padding-top: 70px
-		text-align: center
-		transition: opacity .4s ease-in
-		&.active
-			opacity: 1
-		&-list
-			&-item
-				font-size: 2.4rem
-				color: #fff
-				&:nth-child(n+2)
-					margin-top: 4rem
-.content
-	padding: 0 20px 20px
-	margin-top: 50px
-	position: relative
-	&__heading
-		text-align: center
-		font-size: 3rem
-		color: #333
-		& + .content__body
-			margin-top: 30px
-	&__body
-		font-size: 1.5rem
-		color: #333
-		line-height: 1.6
-		letter-spacing: .23px
-		&:nth-of-type(n+2)
-			margin-top: 1rem
+				margin-left: 20px
+			&.slick-active
+				background-color: #333
+.slick-slide
+	margin-right: 20px
+.slick-list
+	padding-right: 14%
