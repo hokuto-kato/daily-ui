@@ -5,7 +5,7 @@ const autoprefixer = require("autoprefixer")
 const TerserPlugin = require("terser-webpack-plugin")
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin")
 const copyPlugin = require("copy-webpack-plugin")
-const dailyID = "03"
+const dailyID = "04"
 const buildPath = `${__dirname}/docs/${dailyID}/`
 
 module.exports = merge(common, {

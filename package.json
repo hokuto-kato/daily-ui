@@ -4,21 +4,20 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config ./webpack.prod.js",
-    "dev": "webpack serve --config ./webpack.dev.js"
+    "dev": "webpack serve --config ./webpack.dev.js",
+    "build": "webpack --config ./webpack.prod.js"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/hokuto-kato/template_static-webpack.git"
+    "url": "git+https://github.com/hokuto-kato/daily-ui"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/hokuto-kato/template_static-webpack/issues"
+    "url": "https://github.com/hokuto-kato/daily-ui/issues"
   },
-  "homepage": "https://github.com/hokuto-kato/template_static-webpack#readme",
+  "homepage": "https://github.com/hokuto-kato/daily-ui#readme",
   "dependencies": {
     "@babel/core": "^7.16.7",
     "@babel/preset-env": "^7.16.8",

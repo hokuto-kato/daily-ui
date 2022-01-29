@@ -1,58 +1,6 @@
 @import "destyle.css"
-@import "./base"
-@import "./mixin"
-
-.main
-	padding: 30px 20px 0
-	position: relative
-	@include mq-min("710px")
-		width: 710px
-		margin: 0 auto
-	&__title
-		@include heading()
-	&__img
-		display: block
-		width: 100%
-		aspect-ratio: 11 / 17
-		margin-top: 15px
-		opacity: 0
-		img
-			width: 100%
-		&.complete
-			transition: all .8s ease-in
-			opacity: 1
-.progress
-	&__container
-		display: flex
-		align-items: center
-		margin-top: 15px
-	&__daily-id
-		+heading()
-		margin-left: auto
-	&__bar
-		background-color: #333
-		width: 0
-		height: 9px
-		border-radius: 4.5px
-		transition: all .2s ease-in
-		opacity: 0
-		&-wrap
-			width: 85%
-			&.complete
-				transition: all .2s ease-in
-				opacity: 0
-	&__number
-		position: absolute
-		top: 50%
-		left: 50%
-		transform: translate(-50%, -50%)
-		color: #333
-		font-family: Calibri, sans-serif
-		font-style: italic
-		font-weight: bold
-		font-size: 10rem
-		transition: all .2s ease-in
-		opacity: 0
-		&.complete
-			opacity: 0 !important
-			transition: all .2s ease-in
+@import "base"
+@import "mixin"
+@import "keyframe"
+@import "utility"
+@import "project"
