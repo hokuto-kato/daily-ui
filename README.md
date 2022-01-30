@@ -30,6 +30,16 @@ https://www.dropbox.com/s/lwfj2pc9y7nvoqm/05.mp4
 ## node
 v16.13.2
 
+## dailyIDの切り替え
+### src → day
+```
+$ yarn up [dailyID]
+```
+### day → src
+```
+$ yarn down [dailyID]
+```
+
 ## dev
 ```
 $ yarn dev

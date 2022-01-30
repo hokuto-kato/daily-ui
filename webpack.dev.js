@@ -4,8 +4,9 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const autoprefixer = require("autoprefixer")
 const TerserPlugin = require("terser-webpack-plugin")
 const copyPlugin = require("copy-webpack-plugin")
-const dailyID = "05"
-const buildPath = `${__dirname}/docs/${dailyID}/`
+const dailyID = 5
+const dalyIDPad = String(dailyID).padStart(2, "0")
+const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 
 module.exports = merge(common, {
 	mode: "development",
