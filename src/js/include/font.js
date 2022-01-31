@@ -1,7 +1,7 @@
 export default function () {
 	(function(d) {
 		let config = {
-				kitId: 'ukk7tpt',
+				kitId: 'yrc4pur',
 				scriptTimeout: 3000,
 				async: true
 			},

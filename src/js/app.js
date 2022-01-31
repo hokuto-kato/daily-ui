@@ -1,8 +1,9 @@
+import $ from "jquery"
 import sass from "../sass/app.sass"
 import font from "./include/font"
-import submit from "./include/submit"
+import carousel from "./include/carousel"
 
-document.addEventListener('DOMContentLoaded', () => {
+$(() => {
 	font()
-	submit()
+	carousel()
 })

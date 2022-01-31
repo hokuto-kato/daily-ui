@@ -1,4 +1,4 @@
-- contentName = "Daily UI - 06"
+- contentName = "Daily UI - 05"
 doctype html
 html(lang="ja")
 	head
@@ -6,49 +6,27 @@ html(lang="ja")
 		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
 		meta(name="description" content=contentName)
 		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		link(rel="shortcut icon" type="image/x-icon" href="./favicon/favicon.ico")
 		title !{contentName}
-	body
-		header.header
-			h1.header__heading Daily UI 06
-			p.header__contact お問い合わせ
-			.header__menu
-				.header__menu-line
-				.header__menu-line
-		main.main
-			p.description メールでのお問い合わせ・お仕事のご相談は下記よりお送りください。内容を確認後、メールにてお返事させて頂きます。
-			form.form
-				dl.form__body
-					dt.form__title
-						label.form__title-label(for="name") お名前
-					dd.form__data
-						input.form__data-input-text(id="name" type="text")
-					dt.form__title
-						label.form__title-label(for="mail") メールアドレス
-					dd.form__data
-						input.form__data-input-text(id="mail" type="email")
-					dt.form__title 性別
-					dd.form__data
-						.form__data-radio
-							input.form__data-input-radio.visually-hidden(type="radio" id="male" name="gender" checked)
-							label.form__data-label-radio(for="male") 男性
-						.form__data-radio
-							input.form__data-input-radio.visually-hidden(type="radio" id="female" name="gender")
-							label.form__data-label-radio(for="female") 女性
-						.form__data-radio
-							input.form__data-input-radio.visually-hidden(type="radio" id="neither" name="gender")
-							label.form__data-label-radio(for="neither") どちらでもない
-					dt.form__title
-						label.form__title-label(for="contact") お問い合わせ内容
-						dd.form__data
-							textarea(id="contact").form__data-textarea.form__data-text-contact
-				.form__check
-					input.form__check-input.visually-hidden(type="checkbox" id="confirm" data-check)
-					label.form__check-label(for="confirm") 内容に間違いがなければチェック
-				button.form__button(type="button" data-button)
-					span.form__button-body 送信する
-					span.form__button-slide.visually-hidden(data-button-slide)
-		footer.footer
-			small.footer__copy &copy; Daily UI, Inc.
-		.thanks.visually-hidden(data-thanks)
-			span.thanks__body(data-thanks-body) Thanks
-
+	body.container
+		main.wrap
+			section.main
+				.content
+					h1.main__title Daily UI
+					h2.main__title--sub 05
+					.carousel
+						.carousel__body(data-carousel)
+							.carousel__item
+								img.carousel__img(src=require("~/img/img01.jpg"), alt="床屋さんのイメージ01")
+							.carousel__item
+								img.carousel__img(src=require("~/img/img02.jpg"), alt="床屋さんのイメージ02")
+							.carousel__item
+								img.carousel__img(src=require("~/img/img03.jpg"), alt="床屋さんのイメージ03")
+							.carousel__item
+								img.carousel__img(src=require("~/img/img04.jpg"), alt="床屋さんのイメージ04")
+							.carousel__item
+								img.carousel__img(src=require("~/img/img05.jpg"), alt="床屋さんのイメージ05")
+						.carousel__indicator--num
+							.carousel__indicator--num-index(data-caounsel-index) 01
+							.carousel__indicator--num-count(data-caounsel-count) 05
+				.carousel__indicator--dot(data-carousel-dot)
