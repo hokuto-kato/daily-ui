@@ -18,12 +18,14 @@ html(lang="ja")
 			p.description メールでのお問い合わせ・お仕事のご相談は下記よりお送りください。内容を確認後、メールにてお返事させて頂きます。
 			form.form
 				dl.form__body
-					dt.form__title お名前
+					dt.form__title
+						label.form__title-label(for="name") お名前
 					dd.form__data
-						input.form__data-input-text(type="text")
-					dt.form__title メールアドレス
+						input.form__data-input-text(id="name" type="text")
+					dt.form__title
+						label.form__title-label(for="mail") メールアドレス
 					dd.form__data
-						input.form__data-input-text(type="email")
+						input.form__data-input-text(id="mail" type="email")
 					dt.form__title 性別
 					dd.form__data
 						.form__data-radio
@@ -35,9 +37,10 @@ html(lang="ja")
 						.form__data-radio
 							input.form__data-input-radio.visually-hidden(type="radio" id="neither" name="gender")
 							label.form__data-label-radio(for="neither") どちらでもない
-					dt.form__title お問い合わせ内容
+					dt.form__title
+						label.form__title-label(for="contact") お問い合わせ内容
 						dd.form__data
-							textarea.form__data-textarea.form__data-text-contact
+							textarea(id="contact").form__data-textarea.form__data-text-contact
 				.form__check
 					input.form__check-input.visually-hidden(type="checkbox" id="confirm" data-check)
 					label.form__check-label(for="confirm") 内容に間違いがなければチェック
