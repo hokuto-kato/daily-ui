@@ -3,8 +3,7 @@ const common = require("./webpack.common")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const autoprefixer = require("autoprefixer")
 const TerserPlugin = require("terser-webpack-plugin")
-const copyPlugin = require("copy-webpack-plugin")
-const dailyID = 5
+const dailyID = 6
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 
@@ -107,14 +106,6 @@ module.exports = merge(common, {
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: "./css/[name].css",
-		}),
-		new copyPlugin({
-			patterns: [
-				{
-					from: `${__dirname}/src/favicon/favicon.ico`,
-					to: `${buildPath}/favicon/`,
-				},
-			],
 		}),
 	],
 })

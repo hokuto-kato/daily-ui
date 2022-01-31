@@ -1,0 +1,78 @@
+.container
+	background-color: #fafafa
+.content
+	padding: 20px 0 0 20px
+.main
+	position: relative
+	@include mq-min("650px")
+		width: 650px
+		margin: 0 auto
+	&__title
+		@include heading()
+		&--sub
+			@include heading()
+			position: absolute
+			right: 20px
+			bottom: -12px
+.carousel
+	margin-top: 25px
+	&__img
+		width: 100%
+		vertical-align: top
+	&__indicator
+			&--num
+				position: relative
+				overflow: hidden
+				width: 60px
+				height: 60px
+				margin-top: -42px
+				background-color: #fff
+				&:after
+					content: ''
+					display: block
+					position: absolute
+					left: 0
+					bottom: 0
+					border-top: 30px solid transparent
+					border-left: 30px solid transparent
+					border-right: 30px solid #000
+					border-bottom: 30px solid #000
+					z-index: 1
+				&-index
+					font-weight: bold
+					font-style: italic
+					color: #333
+					font-size: 2.2rem
+					position: relative
+					z-index: 2
+					padding: 3px 0 0 5px
+					font-family: calibri, sans-serif
+				&-count
+					font-weight: bold
+					font-style: italic
+					color: #fff
+					font-size: 1.8rem
+					text-align: right
+					position: absolute
+					right: 7px
+					bottom: 7px
+					z-index: 2
+					font-family: calibri, sans-serif
+	&__indicator--dot-body
+		width: 100%
+		display: flex
+		justify-content: center
+		margin-top: 35px
+		li
+			width: 10px
+			height: 10px
+			background-color: #C2C2C2
+			border-radius: 50%
+			&:nth-child(n+2)
+				margin-left: 20px
+			&.slick-active
+				background-color: #333
+.slick-slide
+	margin-right: 20px
+.slick-list
+	padding-right: 14%

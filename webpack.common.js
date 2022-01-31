@@ -5,7 +5,7 @@ const copyPlugin = require("copy-webpack-plugin")
 const pug = globule.find("./src/pug/*.pug", {
 	ignore: ["./src/pug/include/*.pug"],
 })
-const dailyID = 5
+const dailyID = 6
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 const yellow = "\u001b[33m"
@@ -51,8 +51,9 @@ pug.forEach((template) => {
 		new HtmlWebpackPlugin({
 			filename: `${fileName}`,
 			template: template,
-			inject: true, //jsとcssの読み込みを挿入する
+			inject: true,
 			alwaysWriteToDisk: true,
+			favicon: `./src/favicon/favicon.ico`
 		}),
 	)
 })
