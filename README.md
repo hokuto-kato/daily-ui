@@ -1,3 +1,4 @@
+
 # 概要
 毎日UIを組んでいくプロジェクト。
 
@@ -35,6 +36,11 @@ https://www.dropbox.com/s/saseo87ndxu48bf/06.mp4
 device = " 💻 "   
 https://hokuto-kato.github.io/daily-ui/07/  
 https://www.dropbox.com/s/uxs2bspg3kx4spi/07.mp4
+
+# day08
+device = " 💻 "   
+https://hokuto-kato.github.io/daily-ui/08/  
+https://www.dropbox.com/s/xo45d125xb5gs4d/08.mp4
 
 # 開発
 ## node
