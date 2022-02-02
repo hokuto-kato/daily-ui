@@ -42,6 +42,11 @@ device = " 💻 "
 https://hokuto-kato.github.io/daily-ui/08/  
 https://www.dropbox.com/s/xo45d125xb5gs4d/08.mp4
 
+# day09
+device = " 💻 "   
+https://hokuto-kato.github.io/daily-ui/09/  
+https://www.dropbox.com/s/qz5ee5vn9fgwyd1/09.mp4
+
 # 開発
 ## node
 v16.13.2
