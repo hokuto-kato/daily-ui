@@ -49,11 +49,11 @@ v16.13.2
 ## dailyIDの切り替え
 ### src → day
 ```
-$ yarn up [dailyID]
+$ yarn up {dailyID}
 ```
 ### day → src
 ```
-$ yarn down [dailyID]
+$ yarn down {dailyID}
 ```
 
 ## dev
@@ -62,8 +62,8 @@ $ yarn dev
 ```
 
 ## build
-1. 各設定ファイルの`dailyID`を変更。
-2. 下記のビルドコマンドで`./docs/`内にビルド。
+下記のビルドコマンドで`./docs/`内にビルド。
+`yarn up {id}`もしくは`yarn down {id}`で切り替えたIDのディレクトリにビルドされるので注意。
 ```
 $ yarn build
 ```
