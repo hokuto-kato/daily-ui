@@ -62,7 +62,7 @@ $ yarn dev
 ```
 
 ## build
-下記のビルドコマンドで`./docs/`内にビルド。
+下記のビルドコマンドで`./docs/`内にビルド。  
 `yarn up {id}`もしくは`yarn down {id}`で切り替えたIDのディレクトリにビルドされるので注意。
 ```
 $ yarn build
