@@ -10,8 +10,18 @@ const option = {
 	clean: true,
 }
 
+const dailyID = () => {
+	const id = Number(process.argv[2])
+	if (id >= 10) {
+		return id
+	} else {
+		id.padStart(2, "0")
+		return id
+	}
+}
+
 const copyFile = () => {
-	cpx.copy(`./day/0${process.argv[2]}/**/*`, `./src/`, option, (err) => {
+	cpx.copy(`./day/${dailyID()}/**/*`, `./src/`, option, (err) => {
 		if (err) throw err
 		console.log("copy done")
 	})
@@ -20,7 +30,7 @@ const replace = () => {
 	configFile.forEach(val => {
 		fs.readFile(val, "utf8", (err, data) => {
 			if (err) throw err
-			const result = data.replace(/const dailyID = \d/g,
+			const result = data.replace(/const dailyID = \d+/g,
 				`const dailyID = ${process.argv[2]}`)
 
 			fs.writeFile(val, result, "utf8", function(err) {

@@ -1,0 +1,92 @@
+.main
+	width: 1280px
+	height: 754px
+	background-image: url("../img/bg.png")
+	background-color: #404040
+	background-repeat: no-repeat
+	margin: 0 auto
+.header
+	width: 900px
+	height: 80px
+	margin: 0 auto
+	position: fixed
+	top: 0
+	left: 190px
+	z-index: 2
+	@include mq-min("1280px")
+		left: calc(50% - 450px)
+	&.is-init
+		width: 780px
+		height: 60px
+		left: 250px
+		@include mq-min("1280px")
+			left: calc(50% - 390px)
+	&.is-expand
+		width: 900px
+		height: 80px
+		transition: all .6s ease-out
+		@include mq-min("1280px")
+			left: calc(50% - 450px)
+	&.is-shrink
+		width: 780px
+		height: 60px
+		left: 250px
+		transition: all .6s ease-out
+		@include mq-min("1280px")
+			left: calc(50% - 390px)
+	&__title
+		position: fixed
+		top: 212px
+		left: 374px
+		z-index: 1
+		&.is-init
+			position: absolute
+			top: 400px
+		@include mq-min("1280px")
+			left: 50%
+			transform: translateX(-266.105px)
+.nav
+	height: 100%
+	&__box
+		display: flex
+		height: 100%
+	&__item
+		height: 100%
+		flex: auto
+		&-heading
+			font-size: 2.4rem
+			color: #111
+			font-family: calibri, sans-serif
+		&-body
+			height: 100%
+			font-size: 1.3rem
+			color: #111
+			background-color: #ebff00
+			display: flex
+			justify-content: center
+			align-items: center
+			&--entry
+				background-color: #111
+				color: #fff
+.content
+	background-color: #404040
+	padding-bottom: 30px
+	width: 1280px
+	margin: 0 auto
+	&__heading
+		text-align: center
+		color: #fff
+		font-size: 2rem
+		letter-spacing: .3px
+	&__wrap
+		width: 700px
+		margin: 30px auto 0
+	&__body
+		font-size: 1.4rem
+		color: #fff
+		line-height: 1.6
+		letter-spacing: .21px
+		&:nth-child(n+2)
+			margin-top: 20px
+body
+	position: relative

@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const autoprefixer = require("autoprefixer")
 const TerserPlugin = require("terser-webpack-plugin")
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin")
-const dailyID = 9
+const dailyID = 10
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 
@@ -30,16 +30,28 @@ module.exports = merge(common, {
 				extractComments: false,
 			}),
 			new ImageMinimizerPlugin({
-				test: /\.(gif)$/i,
+				test: /\.(gif|svg)$/i,
 				minimizer: {
 					implementation: ImageMinimizerPlugin.imageminMinify,
 					options: {
-						plugins: [["gifsicle", {}]],
+						plugins: [
+							["gifsicle", {}],
+							["svgo", {}],
+						],
 					},
 				},
 			}),
 			new ImageMinimizerPlugin({
-				test: /\.(png|jpe?g)$/i,
+				test: /\.(png)$/i,
+				minimizer: {
+					implementation: ImageMinimizerPlugin.imageminMinify,
+					options: {
+						plugins: [["pngquant", {}]],
+					},
+				},
+			}),
+			new ImageMinimizerPlugin({
+				test: /\.(jpe?g)$/i,
 				minimizer: {
 					implementation: ImageMinimizerPlugin.squooshMinify,
 					options: {},
