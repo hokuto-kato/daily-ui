@@ -15,8 +15,7 @@ const dailyID = () => {
 	if (id >= 10) {
 		return id
 	} else {
-		id.padStart(2, "0")
-		return id
+		return "0" + id
 	}
 }
 
@@ -27,7 +26,6 @@ const copyFile = () => {
 	})
 }
 const replace = () => {
-	console.log(process.argv[2])
 	configFile.forEach((val, index) => {
 		fs.readFile(val, "utf8", (err, data) => {
 			if (err) throw err
