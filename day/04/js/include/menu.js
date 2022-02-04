@@ -1,22 +1,23 @@
-import $ from "jquery"
-
-const $menuTrigger = $("[data-trigger-menu]")
-const $menuTarget = $("[data-target-menu]")
+const menuTrigger = document.querySelector("[data-trigger-menu]")
+const menuTarget = document.querySelector("[data-target-menu]")
+const body = document.querySelector("body")
 
 export default function() {
-	$menuTrigger.on("click", (e) => {
-		if ($(e.currentTarget).hasClass("active")) {
+	menuTrigger.addEventListener("click", (e) => {
+		if (e.currentTarget.classList.contains("active")) {
 			//非アクティブ
-			$(e.currentTarget).add($menuTarget).removeClass("active")
-			$menuTarget.one("transitionend", (e) => {
-				$(e.currentTarget).addClass("visually-hidden")
-				$('body').removeClass("menu-open")
-			})
+			e.currentTarget.classList.remove("active")
+			menuTarget.classList.remove("active")
+			menuTarget.addEventListener("transitionend", (e) => {
+				e.currentTarget.classList.add("visually-hidden")
+				body.classList.remove("menu-open")
+			},{once: true})
 		} else {
 			//アクティブ
-			$(e.currentTarget).addClass("active")
-			$($menuTarget).removeClass("visually-hidden").addClass("active")
-			$('body').addClass("menu-open")
+			e.currentTarget.classList.add("active")
+			menuTarget.classList.remove("visually-hidden")
+			menuTarget.classList.add("active")
+			body.classList.add("menu-open")
 		}
 	})
 }

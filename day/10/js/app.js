@@ -4,5 +4,7 @@ import scroll from "./include/scroll"
 
 document.addEventListener("DOMContentLoaded", () => {
 	font()
+})
+window.addEventListener("load", () => {
 	scroll()
 })

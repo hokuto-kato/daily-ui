@@ -5,9 +5,6 @@ import anime from "./include/anime"
 document.addEventListener("DOMContentLoaded", () => {
 	font()
 })
-window.onload = () => {
+window.addEventListener("load", () => {
 	anime()
-}
-// window.addEventListener("load",()=>{
-// 	anime()
-// })
+})
