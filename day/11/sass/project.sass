@@ -94,12 +94,17 @@
 		background-repeat: no-repeat
 		background-size: 100%
 		position: absolute
-		top: 93px
-		right: 30px
+		top: 83px
+		left: 50px
 		z-index: 2
 		transition: width .4s ease-out
-		@include mq-max("360px")
-			top: 83px
+		@include mq-min("375px")
+			top: 93px
+			left: 65px
+		@include mq-min("390px")
+			left: 80px
+		@include mq-min("412px")
+			left: 102px
 		&.is-scroll
 			width: 0
 	&__text-1
