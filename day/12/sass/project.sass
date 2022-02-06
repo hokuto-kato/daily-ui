@@ -1,0 +1,108 @@
+.container
+	@include mq-min("414px")
+		width: 414px
+		margin: 0 auto
+.header
+	width: 100%
+	height: 70px
+	display: flex
+	align-items: center
+	padding-left: 15px
+	box-shadow: 0 3px 4px 0 rgba(#000, .16)
+	&__heading
+		font-family: calibri, sans-serif
+		font-weight: bold
+		font-style: italic
+		font-size: 3.2rem
+		color: #5497b1
+.main
+	margin-top: 60px
+	padding: 0 15px 50px
+	position: relative
+	&__heading
+		font-size: 3rem
+		color: #5497b1
+		line-height: 1.2
+		letter-spacing: .45px
+		font-family: yu-mincho-pr6n, sans-serif
+		font-weight: bold
+	&__body
+		font-size: 1.6rem
+		color: #5497b1
+		line-height: 1.6
+		letter-spacing: .24px
+		font-family: yu-mincho-pr6n, sans-serif
+		margin-top: 25px
+	&__btn
+		width: 160px
+		height: 40px
+		background-color: #5497b1
+		display: flex
+		justify-content: center
+		align-items: center
+		color: #fff
+		font-size: 1.4rem
+		font-family: yu-mincho-pr6n, sans-serif
+		margin-top: 25px
+		position: relative
+		z-index: 2
+		&.is-active
+			&:before
+				width: 100%
+		&:before
+			transition: width .4s cubic-bezier(0, 0, 0.28, 1)
+			content: ''
+			width: 0
+			height: 40px
+			z-index: -1
+			background-color: #add2dc
+			position: absolute
+			top: 0
+			left: 0
+		&:after
+			content: ''
+			width: 6.4px
+			height: 12.8px
+			background-image: url("../img/arrow.svg")
+			background-repeat: no-repeat
+			background-position: center
+			position: absolute
+			right: 12.6px
+			top: 50%
+			transform: translateY(calc(-12.8px / 2))
+	&__img
+		margin-top: 30px
+		&-body
+			width: 100%
+			height: auto
+		&-caption
+			font-size: 1.6rem
+			color: #fff
+			letter-spacing: .24px
+			margin-top: 10px
+			font-family: yu-mincho-pr6n, sans-serif
+	&__polygon
+		position: absolute
+		bottom: 0
+		left: 0
+		width: 100%
+		display: block
+		background-color: #5497b1
+		clip-path: polygon(100% 0%, 100% 100%, 0% 100%, 0% 78%)
+		@include aspect-ratio(414, 449)
+		z-index: -1
+		overflow: hidden
+		&.is-active
+			& .main__polygon-bg
+				height: 100%
+		&-bg
+			position: absolute
+			bottom: 0
+			left: 0
+			width: 100%
+			height: 0
+			display: block
+			background-color: #add2dc
+			@include aspect-ratio(414, 449)
+			z-index: -1
+			transition: height .4s cubic-bezier(0, 0, 0.28, 1)
