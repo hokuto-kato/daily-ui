@@ -1,0 +1,102 @@
+.container
+	width: 1280px
+	margin: 0 auto
+.header
+	width: 1280px
+	height: 80px
+	position: relative
+	background-color: #19274d
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16)
+	&-inner
+		width: 880px
+		margin: 0 auto
+		display: flex
+	&__heading
+		font-family: calibri, sans-serif
+		font-size: 2.4rem
+		font-weight: bold
+		font-style: italic
+		color: #fff
+		&-body
+			height: 80px
+			display: flex
+			justify-content: center
+			align-items: center
+	&__nav
+		flex: auto
+		margin-left: 30px
+		&-list
+			display: flex
+			justify-content: space-between
+		&-item
+			flex: auto
+		&-body
+			height: 80px
+			display: flex
+			justify-content: center
+			align-items: center
+			color: #fff
+			font-size: 1.4rem
+			padding: 0 20px
+			background-color: #19274d
+			&:hover
+				background-color: #131d3a
+.main
+	width: 1280px
+	height: 542px
+	background-image: url("../img/bg.png")
+	background-size: 100%
+	background-repeat: no-repeat
+	display: flex
+	flex-direction: column
+	justify-content: center
+	align-items: center
+	&__heading
+		font-size: 4rem
+		font-weight: bold
+		font-style: italic
+		font-family: calibri, sans-serif
+		color: #fff
+	&__typewriter
+		font-size: 4rem
+		color: #fff
+		margin-top: 20px
+		&-body-end
+			&:before
+				content: '|'
+				color: #fff
+				font-size: 4rem
+				animation: flash 1.3s steps(1) infinite
+				position: relative
+				top: -4px
+	&__body
+		margin-top: 20px
+		font-size: 1.4rem
+		color: #fff
+	&__button
+		width: 230px
+		height: 50px
+		box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16)
+		background-color: #02a35f
+		color: #fff
+		font-size: 1.6rem
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-top: 40px
+		&:hover
+			background-color: #016f41
+.content
+	margin-top: 70px
+	&__heading
+		font-size: 3.2rem
+		color: #111
+		letter-spacing: .48px
+		text-align: center
+	&__body
+		color: #111
+		font-size: 1.4rem
+		width: 880px
+		margin: 40px auto 0
+		line-height: 1.6
+		letter-spacing: .21px
