@@ -1,0 +1,17 @@
+@mixin mq-min($breakpoint)
+	@media screen and (min-width: $breakpoint)
+		@content
+@mixin mq-max($breakpoint)
+	@media screen and (max-width: $breakpoint)
+		@content
+@mixin aspect-ratio($width, $height, $max-width: none)
+	@if ($max-width != 'none')
+		max-width: $max-width + px
+	&::before
+		float: left
+		content: ""
+		padding-top: calc(round(calc($height / $width) * 100% * 100) / 100)
+	&::after
+		display: block
+		content: ""
+		clear: both
