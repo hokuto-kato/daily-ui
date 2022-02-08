@@ -10,7 +10,7 @@
 	&::before
 		float: left
 		content: ""
-		padding-top: calc(round(calc($height / $width) * 100% * 100) / 100)
+		padding-top: calc(round(calc(#{$height} / #{$width}) * 100% * 100) / 100)
 	&::after
 		display: block
 		content: ""
@@ -18,7 +18,7 @@
 
 $webpClassName: ".is-webp"
 $noWebpClassName: ".is-no-webp"
-@mixin webpBg($selector, $filePath, $fileExtension: 'jpg')
+@mixin webpBg($selector, $filePath, $fileExtension)
 	#{$noWebpClassName} #{$selector}
 		background-image: url(#{$filePath}.#{$fileExtension})
 	#{$webpClassName} #{$selector}
