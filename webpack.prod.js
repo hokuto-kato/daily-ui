@@ -53,7 +53,7 @@ module.exports = merge(common, {
 				},
 			}),
 			new ImageMinimizerPlugin({
-				test: /\.(jpe?g)$/i,
+				test: /\.(jpe?g|webp)$/i,
 				minimizer: {
 					implementation: ImageMinimizerPlugin.squooshMinify,
 					options: {},
@@ -64,7 +64,7 @@ module.exports = merge(common, {
 	module: {
 		rules: [
 			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
+				test: /\.(jpe?g|png|gif|svg|webp)$/i,
 				type: "asset/resource",
 				generator: {
 					filename: "./img/[name].[contenthash][ext]",

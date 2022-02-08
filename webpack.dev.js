@@ -31,7 +31,7 @@ module.exports = merge(common, {
 	module: {
 		rules: [
 			{
-				test: /\.(jpe?g|png|gif|svg)$/i,
+				test: /\.(jpe?g|png|gif|svg|webp)$/i,
 				type: "asset/resource",
 				generator: {
 					filename: "./img/[name][ext]",

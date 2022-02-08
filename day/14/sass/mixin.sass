@@ -15,3 +15,11 @@
 		display: block
 		content: ""
 		clear: both
+
+$webpClassName: ".is-webp"
+$noWebpClassName: ".is-no-webp"
+@mixin webpBg($selector, $filePath, $fileExtension: 'jpg')
+	#{$noWebpClassName} #{$selector}
+		background-image: url(#{$filePath}.#{$fileExtension})
+	#{$webpClassName} #{$selector}
+		background-image: url(#{$filePath}.webp)

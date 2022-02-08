@@ -23,6 +23,7 @@
 	"dependencies": {
 		"@babel/core": "^7.16.7",
 		"@babel/preset-env": "^7.16.8",
+		"@squoosh/cli": "^0.7.2",
 		"@squoosh/lib": "^0.4.0",
 		"autoprefixer": "^10.4.2",
 		"babel-loader": "^8.2.3",
