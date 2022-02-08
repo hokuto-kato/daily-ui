@@ -53,7 +53,7 @@ module.exports = merge(common, {
 				},
 			}),
 			new ImageMinimizerPlugin({
-				test: /\.(jpe?g|webp)$/i,
+				test: /\.(jpe?g)$/i,
 				minimizer: {
 					implementation: ImageMinimizerPlugin.squooshMinify,
 					options: {},
