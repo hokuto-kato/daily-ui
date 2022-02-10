@@ -20,9 +20,9 @@ html(lang="ja")
 					.header__nav-line
 			main.main
 				.glide
-					.glide__controls(data-glide-el="controls")
-						button.glide__controls-item(data-glide-dir="<") men
-						button.glide__controls-item(data-glide-dir=">") woman
+					.glide__controls(data-glide-el="controls[nav]")
+						button.glide__controls-item(data-glide-dir="=0") men
+						button.glide__controls-item(data-glide-dir="=1") woman
 						.glide__current(data-glide-current)
 					.glide__track(data-glide-el="track")
 						ul.glide__slides

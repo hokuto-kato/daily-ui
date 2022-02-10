@@ -1,5 +1,5 @@
 import Glide from "@glidejs/glide"
-const control = document.querySelector('[data-glide-el="controls"]')
+const control = document.querySelector('[data-glide-el="controls[nav]"]')
 const controlItem = document.querySelectorAll("[data-glide-dir]")
 const currentBar = document.querySelector("[data-glide-current]")
 const glide = new Glide(".glide", {
