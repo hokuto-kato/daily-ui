@@ -57,7 +57,10 @@
 				margin-top: 6px
 .glide
 	&__slides
-		transform: translate3d(0, 0, 0) !important
+		transform: none !important
+		width: auto !important
+		display: grid
+		grid-template-areas: 'slide'  //create a 1x1 grid where the single cell is called slide
 	&__controls
 		display: flex
 		position: relative
@@ -85,20 +88,16 @@
 		background-color: #111
 		transition: all .3s ease-out
 	&__slide
-		position: absolute
-		top: 0
-		left: 0
-		order: 2
+		position: relative
 		opacity: 0
-		transition: opacity .3s ease-out
+		transition: opacity 0.3s ease-out
+		grid-area: slide  //assign all child slides to the cell
 		&--active
-			position: relative
-			order: 1
-			opacity: 1
 			z-index: 1
+			opacity: 1
 		&-img
-			width: 100%
-			height: auto
+			width: 414px
+			height: 360px
 			user-select: none
 .button
 	width: 177px

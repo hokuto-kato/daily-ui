@@ -7,8 +7,7 @@ const glide = new Glide(".glide", {
 	perView: 1,
 	rewind: false,
 	gap: 0,
-	animationDuration: 1,
-	throttle: 1,
+	animationDuration: 0,
 })
 export default function() {
 	glide.on("move", () => {
