@@ -1,0 +1,41 @@
+-
+	contentName = "Daily UI - 15"
+doctype html
+html(lang="ja")
+	head
+		meta(charset='UTF-8')
+		meta(name='viewport' content='width=device-width,initial-scale=1,minimum-scale=1')
+		meta(name='description' content='Daily UI - 15')
+		meta(http-equiv='X-UA-Compatible' content='ie=edge')
+		title Daily UI - 15
+	body
+		.container
+			header.header
+				h1.header__heading
+					a.header__heading-body(href="#") Daily UI 15
+				a.header__favorite.visually-hidden(href="#" data-favorite)
+					span.header__favorite-num(data-favorite-num) 1
+				nav.header__nav
+					.header__nav-line
+					.header__nav-line
+			main.main
+				.glide
+					.glide__controls(data-glide-el="controls")
+						button.glide__controls-item(data-glide-dir="<") men
+						button.glide__controls-item(data-glide-dir=">") woman
+						.glide__current(data-glide-current)
+					.glide__track(data-glide-el="track")
+						ul.glide__slides
+							li.glide__slide
+								picture
+									source(srcset=require("~/img/img_male.webp") type="image/webp")
+									img.glide__slide-img(src=require("~/img/img_male.jpg") alt="男性のイメージ" width="414" height="360")
+							li.glide__slide
+								picture
+									source(srcset=require("~/img/img_female.webp") type="image/webp")
+									img.glide__slide-img(src=require("~/img/img_female.jpg") alt="女性のイメージ" width="414" height="360")
+				button.button.visually-hidden(type="button" data-button)
+					span.button__body(data-button-body)
+					span.button__bg(data-button-bg)
+			footer.footer
+				small.footer__copy &copy; Daily UI, Inc.

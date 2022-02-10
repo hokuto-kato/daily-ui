@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const autoprefixer = require("autoprefixer")
 const TerserPlugin = require("terser-webpack-plugin")
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin")
-const dailyID = 14
+const dailyID = 15
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 
@@ -71,7 +71,7 @@ module.exports = merge(common, {
 				},
 			},
 			{
-				test: /\.sass$/i,
+				test: /\.(sass|scss)$/i,
 				use: [
 					{
 						loader: MiniCssExtractPlugin.loader,
@@ -102,28 +102,6 @@ module.exports = merge(common, {
 						options: {
 							sourceMap: false,
 						},
-					},
-				],
-			},
-			{
-				test: /\.js$/i,
-				loader: "babel-loader",
-				options: {
-					presets: ["@babel/preset-env"],
-				},
-			},
-			{
-				test: /\.html$/i,
-				loader: "html-loader",
-			},
-			{
-				test: /\.css$/i,
-				use: [
-					{
-						loader: MiniCssExtractPlugin.loader,
-					},
-					{
-						loader: "css-loader",
 					},
 				],
 			},
