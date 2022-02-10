@@ -5,6 +5,8 @@ import favorite from "./include/favorite"
 
 document.addEventListener("DOMContentLoaded", () => {
 	font()
-	glide()
 	favorite()
+})
+window.addEventListener("load", () => {
+	glide()
 })
