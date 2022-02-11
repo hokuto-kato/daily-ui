@@ -1,10 +1,10 @@
-@mixin mq-min($breakpoint)
+=mq-min($breakpoint)
 	@media screen and (min-width: $breakpoint)
 		@content
-@mixin mq-max($breakpoint)
+=mq-max($breakpoint)
 	@media screen and (max-width: $breakpoint)
 		@content
-@mixin aspect-ratio($width, $height, $max-width: none)
+=aspect-ratio($width, $height, $max-width: none)
 	@if ($max-width != 'none')
 		max-width: $max-width + px
 	&::before
@@ -18,7 +18,7 @@
 
 $webpClassName: ".is-webp"
 $noWebpClassName: ".is-no-webp"
-@mixin webpBg($selector, $filePath, $fileExtension)
+=webpBg($selector, $filePath, $fileExtension)
 	#{$noWebpClassName} #{$selector}
 		background-image: url(#{$filePath}.#{$fileExtension})
 	#{$webpClassName} #{$selector}
