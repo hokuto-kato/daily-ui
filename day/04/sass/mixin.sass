@@ -1,10 +1,18 @@
-@mixin mq-min($breakpoint)
+=mq-min($breakpoint)
 	@media screen and (min-width: $breakpoint)
 		@content
 
-@mixin heading()
+=heading()
 	font-size: 3.2rem
 	color: #333
 	font-family: calibri, sans-serif
 	font-weight: bold
 	font-style: italic
+
+$webpClassName: ".is-webp"
+$noWebpClassName: ".is-no-webp"
+=webpBg($selector, $filePath, $fileExtension)
+	#{$noWebpClassName} #{$selector}
+		background-image: url(#{$filePath}.#{$fileExtension})
+	#{$webpClassName} #{$selector}
+		background-image: url(#{$filePath}.webp)
