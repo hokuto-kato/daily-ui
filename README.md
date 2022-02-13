@@ -68,6 +68,10 @@ https://www.dropbox.com/s/10jupm8h2k9rygi/15.mp4
 https://hokuto-kato.github.io/daily-ui/16/  
 https://www.dropbox.com/s/01bcqjnid2ls8u0/16.mp4
 
+## day17 = {device : "📱"}   
+https://hokuto-kato.github.io/daily-ui/17/  
+https://www.dropbox.com/s/9xz41j80ovqq3zr/17.mp4
+
 # 開発
 ## node
 v16.13.2

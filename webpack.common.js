@@ -6,9 +6,9 @@ const SVGSpritemapPlugin = require("svg-spritemap-webpack-plugin")
 const pug = globule.find("./src/pug/*.pug", {
 	ignore: ["./src/pug/include/*.pug"],
 })
-const svg = globule.find("./src/svg/*.svg").length
+const svg = globule.find("./src/img/*.svg").length
 
-const dailyID = 4
+const dailyID = 17
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 const yellow = "\u001b[33m"

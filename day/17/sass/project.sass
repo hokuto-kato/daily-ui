@@ -1,0 +1,118 @@
+.container
+	padding-top: 80px
+	+mq-min("414px")
+		width: 414px
+		margin: 0 auto
+.header
+	background-color: #000
+	height: 80px
+	display: flex
+	align-items: center
+	padding: 0 20px
+	box-shadow: 0 3px 6px 0 rgba(0, 0, 0, 0.16)
+	position: fixed
+	top: 0
+	left: 0
+	width: 100%
+	+mq-min("414px")
+		width: 414px
+		top: 0
+		left: 50%
+		transform: translateX(-207px)
+	&__heading
+		color: #fff
+		font-weight: bold
+		font-style: italic
+		font-size: 2.4rem
+		font-family: calibri, sans-serif
+		flex: auto
+	&__input
+		width: 36px
+		height: 36px
+		border-radius: 18px
+		background-color: #fff
+		display: flex
+		align-items: center
+		position: relative
+		transition: width .5s cubic-bezier(0.215, 0.610, 0.355, 1.000)
+		&.is-active
+			width: 200px
+			+mq-min("414px")
+				width: 240px
+			& .header__input-icon
+				transform: translateY(-10px) rotate(-360deg)
+			& .header__input-body
+				width: 200px
+				+mq-min("414px")
+					width: 240px
+		&-body
+			width: 36px
+			height: 36px
+			border-radius: 18px
+			transition: width .5s cubic-bezier(0.215, 0.610, 0.355, 1.000)
+			outline: none
+			padding: 0 35px 0 20px
+			font-size: 1.4rem
+			color: #333
+		&-icon
+			+sprite("icon_search")
+			width: 20px
+			height: 20px
+			position: absolute
+			top: 50%
+			transform: translateY(-10px) rotate(0deg)
+			right: 8px
+			transition: transform .5s cubic-bezier(0.215, 0.610, 0.355, 1.000)
+.main
+	padding: 40px 20px 0
+	&__list
+		&-item
+			padding-bottom: 20px
+			list-style: none
+			display: flex
+			align-items: center
+			&:nth-of-type(n+2)
+				border-top: 1px solid #ebebeb
+				padding: 20px 0
+			&-input:checked
+				& + .main__list-item-check:before
+					transform: scale(1)
+			&-check
+				width: 24px
+				height: 24px
+				background-color: #ededed
+				border-radius: 50%
+				flex: 0 0 24px
+				display: flex
+				justify-content: center
+				align-items: center
+				&:before
+					content: ''
+					display: block
+					+sprite("icon_check")
+					width: 15px
+					height: 10.7px
+					transform: scale(0)
+					transition: transform .1s ease-out
+			&-user
+				display: flex
+				margin-left: 20px
+				&-img
+					width: 80px
+					height: 80px
+					border-radius: 50%
+					overflow: hidden
+					flex: 0 0 80px
+				&-info
+					padding-left: 15px
+				&-name
+					font-size: 2rem
+					font-weight: bold
+					color: #333
+				&-message
+					font-size: 1.4rem
+					color: #333
+					margin-top: 10px
+					line-height: 1.43
+					letter-spacing: 0.21px
+
