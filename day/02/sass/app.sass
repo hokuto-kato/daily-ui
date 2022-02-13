@@ -1,10 +1,8 @@
 @import "destyle.css"
 @import "./base"
 @import "./mixin"
-@import "//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css"
+@import "@glidejs/glide/src/assets/sass/glide.core"
 
-.slick-list
-	cursor: grabbing
 .main
 	width: 1280px
 	margin: 150px auto 0
@@ -19,9 +17,3 @@
 			bottom: -83px
 			right: 164px
 			@include heading()
-	&__carousel
-		&-item
-			width: 950px !important
-			margin: 0 40px
-		&-image
-			margin: 0 auto

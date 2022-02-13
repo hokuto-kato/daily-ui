@@ -1,4 +1,9 @@
 - contentName = "Daily UI - 02"
+mixin picture(path, type, alt)
+	picture
+		source(srcset=require(`${path}.webp`) type=`image/webp`)
+		img(src=`${path}.${type}` alt=`${alt}`)
+
 doctype html
 html(lang="ja")
 	head
@@ -11,10 +16,18 @@ html(lang="ja")
 		section.main
 			h1.main__heading Daily UI
 			h2.main__heading--sub 02
-			.main__carousel(data-carousel)
-				.main__carousel-item
-					img.main__carousel-image(src=require("~/img/dog01.jpg") alt="犬のイメージ01")
-				.main__carousel-item
-					img.main__carousel-image(src=require("~/img/dog02.jpg") alt="犬のイメージ02")
-				.main__carousel-item
-					img.main__carousel-image(src=require("~/img/dog03.jpg") alt="犬のイメージ03")
+			.glide(data-glide)
+				.glide__track(data-glide-el="track")
+					ul.glide__slides
+						li.glide__slide
+							picture
+								source(srcset=require("~/img/dog01.webp") type="image/webp")
+								img.glide__slide-img(src=require("~/img/dog01.jpg") alt="犬のイメージ1" width="950" height="500")
+						li.glide__slide
+							picture
+								source(srcset=require("~/img/dog02.webp") type="image/webp")
+								img.glide__slide-img(src=require("~/img/dog02.jpg") alt="犬のイメージ2" width="950" height="500")
+						li.glide__slide
+							picture
+								source(srcset=require("~/img/dog03.webp") type="image/webp")
+								img.glide__slide-img(src=require("~/img/dog03.jpg") alt="犬のイメージ3" width="950" height="500")

@@ -8,7 +8,7 @@ const pug = globule.find("./src/pug/*.pug", {
 })
 const svg = globule.find("./src/svg/*.svg").length
 
-const dailyID = 16
+const dailyID = 3
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 const yellow = "\u001b[33m"
