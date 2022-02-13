@@ -1,11 +1,11 @@
-import $ from "jquery"
-import slick from "slick-carousel"
-const carousel = document.querySelector("[data-carousel]")
-export default function () {
-	$(carousel).slick({
-		centerMode: true,
-		variableWidth: true,
-		slidesToShow: 1,
-		arrows: false
-	})
+import Glide from "@glidejs/glide"
+const glide = new Glide("[data-glide]", {
+	type: "slider",
+	perView: 1,
+	gap: 80,
+	rewind: false,
+	peek: 163
+})
+export default function() {
+	glide.mount()
 }

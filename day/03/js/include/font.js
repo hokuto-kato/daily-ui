@@ -1,5 +1,4 @@
 import preload from "./preload"
-
 export default function() {
 	(function(d) {
 		let config = {
