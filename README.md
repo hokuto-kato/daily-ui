@@ -73,6 +73,10 @@ https://www.dropbox.com/s/01bcqjnid2ls8u0/16.mp4
 v16.13.2
 
 ## dailyIDの切り替え
+### デフォルト設定
+```
+$ yarn default {dailyID}
+```
 ### src → day
 ```
 $ yarn up {dailyID}
