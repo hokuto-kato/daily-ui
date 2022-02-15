@@ -1,0 +1,87 @@
+.container
+	padding: 15px
+.header
+	height: 44px
+	display: flex
+	align-items: center
+	&__heading
+		font-family: calibri, sans-serif
+		font-size: 2.4rem
+		font-weight: bold
+		font-style: italic
+		color: #111
+		flex: auto
+	&__button
+		width: 180px
+		height: 44px
+		border-radius: 22px
+		box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16)
+		background-image: linear-gradient(110deg, #d85386 18%, #e20261 88%)
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		&-body
+			font-size: 1rem
+			color: #fff
+			&-em
+				font-size: 1.5rem
+				color: #fff
+				margin-top: 3px
+.nav
+	margin-top: 25px
+	position: relative
+	&__list
+		display: flex
+		justify-content: space-around
+	&__item
+		&-body
+			width: 100%
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 30px
+			font-size: 1.2rem
+			color: #555
+			position: relative
+			z-index: 1
+	&__current
+		width: 80px
+		height: 30px
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16)
+		background-color: #555
+		border-radius: 15px
+		position: absolute
+		bottom: 0
+		left: calc(24px - 16px)
+		z-index: -1
+.main
+	&__img
+		width: 100%
+		height: auto
+		margin-top: 25px
+		border-radius: 10px
+		box-shadow: 0 3px 4px 0 rgba(0, 0, 0, 0.16)
+	&__heading
+		color: #de5050
+		font-size: 2.4rem
+		margin-top: 35px
+		display: flex
+		align-items: center
+		line-height: 1.5
+		letter-spacing: 0.24px
+		&:before
+			content: ""
+			display: block
+			border-radius: 3px
+			box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16)
+			background-image: linear-gradient(176deg, #868686 0%, #626262 100%)
+			width: 6px
+			height: 64px
+			margin-right: 15px
+	&__body
+		margin-top: 25px
+		font-size: 1.6rem
+		color: #555
+		line-height: 1.8
+		letter-spacing: 0.24px
