@@ -1,0 +1,46 @@
+- contentName = "Daily UI - 19"
+doctype html
+html(lang="ja")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
+		meta(name="description" content=contentName)
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		title !{contentName}
+	body
+		.container
+			main.main
+				.user
+					.user__img
+					h1.user__heading Daily UI 19
+					a.user__button(href="#") 問い合わせる
+				.glide(data-glide)
+					.glide__track(data-glide-el="track")
+						ul.glide__slides
+							li.glide__slide.is-active(data-glide-item)
+								picture
+									source(srcset=require("~/img/img_item01.webp") type="image/webp")
+									img.glide__slide-img(src=require("~/img/img_item01.jpg") alt="本と珈琲のイメージ" width="270" height="400")
+							li.glide__slide(data-glide-item)
+								picture
+									source(srcset=require("~/img/img_item02.webp") type="image/webp")
+									img.glide__slide-img(src=require("~/img/img_item02.jpg") alt="タイプライターのイメージ" width="270" height="400")
+							li.glide__slide(data-glide-item)
+								.glide__slide-content
+									.glide__slide-content-circle
+									h2.glide__slide-content-heading
+										|ようこそ
+										span.u-white 日本
+									source(srcset=require("~/img/img_maiko.webp") type="image/webp")
+									img.glide__slide-content-img(src=require("~/img/img_maiko.jpg") alt="舞妓さんのイメージ" width="140" height="140")
+									p.glide__slide-content-body
+										| この文章はダミーです。文字の大きさ、量、字間、行間等を確認するために入れています。この文章はダミーです。
+									p.glide__slide-content-body
+										| 文字の大きさ、量、字間、行間等を確認するために入れています。
+						.glide__controls(data-glide-el="controls[nav]")
+							button.glide__controls-item.is-active(data-glide-dir="=0" aria-label="本と珈琲のイメージのスライド")
+							button.glide__controls-item(data-glide-dir="=1" aria-label="タイプライターのイメージのスライド")
+							button.glide__controls-item(data-glide-dir="=2" aria-label="ようこそ日本のスライド")
+
+
+

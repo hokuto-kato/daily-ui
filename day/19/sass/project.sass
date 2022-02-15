@@ -1,0 +1,100 @@
+.container
+	background-image: linear-gradient(to bottom, #dedbdb, #d5d5d5)
+	padding-top: 30px
+	padding-bottom: 30px
+	max-width: 414px
+	margin: 0 auto
+	overflow: hidden
++webpBg(".user__img", "../img/img_user", "jpg")
+.user
+	display: flex
+	flex-direction: column
+	align-items: center
+	&__img
+		width: 120px
+		height: 120px
+		background-size: cover
+		background-position: 50% 50%
+		background-repeat: no-repeat
+		border-radius: 50%
+	&__heading
+		font-size: 1.6rem
+		font-family: calibri, sans-serif
+		color: #111
+		margin-top: 10px
+	&__button
+		width: 100px
+		height: 30px
+		border-radius: 15px
+		box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16)
+		background-color: #000
+		color: #fff
+		display: flex
+		justify-content: center
+		align-items: center
+		margin-top: 10px
+.glide
+	margin-top: 60px
+	opacity: 0
+	transition: opacity 0.2s ease-in
+	&--swipeable
+		opacity: 1
+	&__track,
+	&__slides
+		overflow: visible
+	&__slide
+		width: 270px
+		border-radius: 20px
+		overflow: hidden
+		box-shadow: 0 6px 10px 0 rgba(0, 0, 0, 0.16)
+		background-color: #fff
+		transition: transform .5s ease-out
+		&.is-active
+			transform: translateY(-30px)
+		&-content
+			padding: 25px 20px 20px
+			position: relative
+			&-img
+				width: 140px
+				height: 140px
+				border-radius: 7px
+				display: block
+				margin: 15px auto 0
+				position: relative
+				z-index: 2
+			&-body
+				font-size: 1.4rem
+				color: #111
+				margin-top: 20px
+				line-height: 1.6
+			&-circle
+				background-color: #d60000
+				clip-path: circle(123px at 123px -6px)
+				position: absolute
+				right: 0
+				top: 0
+				width: 123px
+				height: 117px
+				z-index: 1
+			&-heading
+				font-size: 2.5rem
+				z-index: 2
+				position: relative
+				text-align: center
+				font-weight: normal
+				color: #111
+		&-img
+			width: 100%
+			height: auto
+	&__controls
+		margin-top: 20px
+		display: flex
+		justify-content: center
+		&-item
+			width: 10px
+			height: 10px
+			border-radius: 50%
+			margin: 0 10px
+			background-color: #33333340
+			&.is-active
+				background-color: #333
