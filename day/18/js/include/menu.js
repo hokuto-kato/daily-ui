@@ -70,7 +70,9 @@ export default class {
 		})
 	}
 	init = () =>{
+		const itemPosition = this.item[0].offsetLeft
 		this.item[0].style.color = "#fff"
+		this.current.style.left = `${itemPosition - 16}px`
 	}
 	handleEvent() {
 		this.item.forEach((e, i) => {
