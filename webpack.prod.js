@@ -4,7 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const autoprefixer = require("autoprefixer")
 const TerserPlugin = require("terser-webpack-plugin")
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin")
-const dailyID = 19
+const dailyID = 20
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 

@@ -1,0 +1,73 @@
+.container
+	padding: 20px
+	background-color: #fafafa
+	max-width: 414px
+	margin: 0 auto
+.header
+	display: flex
+	align-items: center
+	&__heading
+		font-family: calibri, sans-serif
+		font-size: 3.2rem
+		font-weight: bold
+		font-style: italic
+		color: #111
+		flex: auto
+	&__nav
+		width: 20px
+		height: 10px
+		&-line
+			width: 20px
+			height: 2px
+			background-color: #111
+			&:nth-child(n+2)
+				margin-top: 6px
+.main
+	&__img
+		margin-top: 15px
+		width: 100%
+		height: auto
+		box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16)
+	&__info
+		height: 70px
+		display: flex
+		justify-content: center
+		align-items: center
+		background-color: #fff
+		overflow: hidden
+		margin-top: 30px
+		position: relative
+		&-body
+			font-size: 1.6rem
+			color: #111
+			font-family: fot-tsukuardgothic-std, sans-serif
+			white-space: nowrap
+			transform: translateX(100%)
+			font-weight: bold
+			animation: slideOut 6s linear infinite
+	&__heading
+		font-size: 2.4rem
+		color: #111
+		font-family: fot-tsukuardgothic-std, sans-serif
+		margin-top: 40px
+		text-align: center
+		font-weight: bold
+	&__list
+		display: flex
+		margin-top: 30px
+		&-item
+			width: 177px
+			&:nth-child(2)
+				margin-left: 20px
+		&-img
+			border-radius: 5px
+			box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.16)
+			width: 100%
+			height: auto
+		&-body
+			font-size: 1.6rem
+			color: #111
+			font-family: fot-tsukuardgothic-std, sans-serif
+			margin-top: 15px
+			line-height: 1.6
+			letter-spacing: 0.24px
