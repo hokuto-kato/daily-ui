@@ -4,6 +4,7 @@ const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const autoprefixer = require("autoprefixer")
 const TerserPlugin = require("terser-webpack-plugin")
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin")
+const workBoxWebpackPlugin = require("workbox-webpack-plugin")
 const dailyID = 20
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
@@ -46,9 +47,11 @@ module.exports = merge(common, {
 				minimizer: {
 					implementation: ImageMinimizerPlugin.imageminMinify,
 					options: {
-						plugins: [["pngquant", {
-							speed: 1,
-						}]],
+						plugins: [
+							[
+								"pngquant", {
+								speed: 1,
+							}]],
 					},
 				},
 			}),
@@ -117,6 +120,23 @@ module.exports = merge(common, {
 	plugins: [
 		new MiniCssExtractPlugin({
 			filename: "./css/[name].[contenthash].css",
+		}),
+		new workBoxWebpackPlugin.GenerateSW({
+			clientsClaim: true,
+			skipWaiting: true,
+			mode: "production",
+			runtimeCaching: [
+				{
+					urlPattern: new RegExp("./"),
+					handler: "CacheFirst",
+					options: {
+						cacheName: "static-cache",
+						expiration: {
+							maxAgeSeconds: 60 * 60 * 24 * 30,
+						},
+					},
+				},
+			],
 		}),
 	],
 })
