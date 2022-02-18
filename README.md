@@ -1,5 +1,6 @@
 # 概要
-毎日UIをコーディングしていくプロジェクト。
+毎日UIをコーディングしていくプロジェクト。  
+目標50日。
 
 # 成果物
 ## day01 = {device : "💻"}   
@@ -85,6 +86,10 @@ https://www.dropbox.com/s/9f1tty1xvfmmydv/20.mp4
 ## day21 = {device : "📱"}   
 https://hokuto-kato.github.io/daily-ui/21/  
 https://www.dropbox.com/s/l42vz78m3q0m5gw/21.mp4
+
+## day22 = {device : "💻"}   
+https://hokuto-kato.github.io/daily-ui/22/  
+https://www.dropbox.com/s/g27yziuxqxp2s29/22.mp4
 
 # 開発
 ## node
