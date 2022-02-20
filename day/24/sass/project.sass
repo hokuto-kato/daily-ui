@@ -1,0 +1,247 @@
+.container
+	padding-top: 60px
+	max-width: 414px
+	margin: 0 auto
+.header
+	width: 100%
+	height: 60px
+	box-shadow: 0 1px 0 0 #2e2e2e
+	background-color: #111
+	display: flex
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 1
+	&__heading
+		font-family: calibri,sans-serif
+		font-size: 2.4rem
+		font-weight: bold
+		font-style: italic
+		color: #fff
+		display: flex
+		align-items: center
+		justify-content: center
+		flex: 1 1 100%
+	&__cart
+		width: 60px
+		height: 60px
+		flex: 0 0 60px
+		display: flex
+		justify-content: center
+		align-items: center
+		border-left: 1px solid #333
+		&-img
+			width: 24.31px
+			height: 24.763px
+.nav
+	&__inner
+		overflow: scroll
+		height: 100vh
+	&__toggle
+		width: 60px
+		height: 60px
+		flex: 0 0 60px
+		border-right: 1px solid #333
+		display: flex
+		justify-content: center
+		align-items: center
+		flex-direction: column
+		&.is-active .nav__line
+			transform: rotate(-45deg)
+			&:nth-child(2)
+				transform: rotate(45deg) translate(-1.5px,-1px)
+		&-body
+			color: #111
+			font-size: 2.4rem
+			display: flex
+			justify-content: center
+			align-items: center
+			height: 100%
+	&__line
+		width: 20px
+		height: 2px
+		background-color: #fff
+		transition: transform .2s cubic-bezier(0.165, 0.840, 0.440, 1.000)
+		&:nth-child(2)
+			transform: rotate(90deg) translateX(-2px)
+.main
+	padding: 25px
+	&__img
+		border-radius: 20px
+		overflow: hidden
+		box-shadow: 0 2px 7px 0 rgba(0, 0, 0, 0.16)
+		&-body
+			width: 100%
+			height: auto
+	&__color
+		margin-top: 15px
+		&-title
+			font-size: 1.5rem
+			color: #111
+			margin-top: 20px
+			font-weight: normal
+			&-value
+				margin-left: .5rem
+		&-data
+			display: flex
+			margin-top: 10px
+			&-item
+				&:nth-child(n+2)
+					margin-left: 10px
+		&-input
+			&:checked + .main__color-label
+				border: 2px solid #ff6010
+		&-label
+			width: 40px
+			height: 40px
+			border-radius: 20px
+			display: block
+			border: solid 1px #ccc
+			&-white
+				background-color: #fff
+			&-black
+				background-color: #000
+			&-gray
+				background-color: #7e7e7e
+	&__size
+		border-top: dashed 1px #707070
+		padding-top: 30px
+		margin-top: 30px
+		&-title
+			font-size: 1.5rem
+			color: #111
+			font-weight: normal
+		&-data
+			margin-top: 15px
+			&-item
+				display: flex
+		&-select
+			position: relative
+			&-body
+				height: 54px
+				border-radius: 5px
+				box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16)
+				background-color: #fff
+				font-size: 1.4rem
+				color: #5a5a5a
+				padding-right: 40px
+				padding-left: 20px
+				width: 100%
+				&:focus
+					outline: 1px solid #ff6010
+			&:after
+				content: ''
+				display: block
+				width: 11.364px
+				height: 6.364px
+				position: absolute
+				right: 15px
+				top: 50%
+				transform: translateY(-3px)
+				+sprite("arrow")
+			&-measure
+				width: 100%
+			&-value
+				width: 120px
+				margin-left: 10px
+	&__button
+		&-wrap
+			display: flex
+			margin-top: 20px
+			border-bottom: 1px dashed #707070
+			padding-bottom: 30px
+			margin-bottom: 30px
+		&-cart
+			height: 54px
+			border-radius: 5px
+			box-shadow: 0 2px 5px 0 rgba(0, 0, 0, 0.16)
+			background-color: #ff6010
+			display: flex
+			flex: auto
+			justify-content: center
+			align-items: center
+			color: #fff
+			font-size: 1.4rem
+			padding: 0 20px
+			&:focus
+				outline: 1px solid #ff6010
+		&-favorite
+			width: 54px
+			height: 54px
+			flex: 0 0 54px
+			border-radius: 5px
+			box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16)
+			background-color: #fff
+			margin-left: 10px
+			display: flex
+			justify-content: center
+			align-items: center
+			position: relative
+			&-body
+				width: 54px
+				height: 54px
+				position: absolute
+				top: 0
+				left: 0
+				border-radius: 5px
+				&:focus
+					outline: 1px solid #ff6010
+			&:after
+				content: ''
+				display: block
+				width: 21px
+				height: 18.377px
+				+sprite("favorite")
+.overlay
+	background-color: rgba(#111,.4)
+	width: 100vw
+	height: 100vh
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 2
+.cart
+	background-color: #111
+	padding: 25px
+	position: fixed
+	bottom: 0
+	width: 100%
+	z-index: 3
+	transform: translateY(100%)
+	&__body
+		color: #fff
+		font-size: 1.6rem
+	&__close
+		position: absolute
+		right: 15px
+		top: 15px
+		&:before
+			content: ''
+			display: block
+			width: 15.6px
+			height: 15.6px
+			+sprite(close)
+	&__button
+		&-cart
+			width: 100%
+			height: 54px
+			border-radius: 5px
+			background-color: #ff6010
+			color: #fff
+			font-size: 1.4rem
+			display: flex
+			justify-content: center
+			align-items: center
+			margin-top: 15px
+		&-purchase
+			width: 100%
+			height: 54px
+			border-radius: 5px
+			border: solid 1px #fff
+			background-color: #111
+			display: flex
+			justify-content: center
+			align-items: center
+			color: #fff
+			font-size: 1.4rem
+			margin-top: 15px
