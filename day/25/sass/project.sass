@@ -1,0 +1,87 @@
+.header
+	width: 100%
+	height: 60px
+	display: flex
+	align-items: center
+	justify-content: center
+	background-color: #4a2881
+	position: relative
+	&__nav
+		width: 60px
+		height: 60px
+		display: flex
+		justify-content: center
+		align-items: center
+		position: absolute
+		flex-direction: column
+		top: 0
+		left: 0
+		&-line
+			width: 20px
+			height: 2px
+			background-color: #fff
+			&:nth-child(n+2)
+				margin-top: 5px
+	&__heading
+		font-size: 2.4rem
+		font-weight: bold
+		font-family: calibri,sans-serif
+		color: #fff
+		font-style: italic
+.main
+	padding: 25px
+	&__body
+		font-size: 1.5rem
+		color: #4e4e4e
+		margin-top: 40px
+	&__num
+		font-size: 7.5rem
+		color: #4a2881
+		text-align: center
+		font-family: calibri,sans-serif
+		margin-top: 100px
+	&__range
+		appearance: none
+		outline: none /* スライダーのアウトラインは見た目がキツイので消す */
+		height: 2px /* バーの高さ */
+		width: 100% /* バーの幅 */
+		background: #ebebeb /* バーの背景色 */
+		border-radius: 0 /* バーの両端の丸み */
+		margin-top: 40px
+		&::-webkit-slider-thumb
+			-webkit-appearance: none
+			background: #4a2881 /* 背景色 */
+			width: 40px /* 幅 */
+			height: 40px /* 高さ */
+			border-radius: 50% /* 円形に */
+			box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.16)
+			border: 13px solid #fff
+		&::-moz-range-thumb
+			-moz-appearance: none
+			background: #4a2881 /* 背景色 */
+			width: 40px /* 幅 */
+			height: 40px /* 高さ */
+			border-radius: 50% /* 円形に */
+			box-shadow: 0 1px 6px 0 rgba(0, 0, 0, 0.16)
+			border: none /* デフォルトの線を消す */
+		&:active::-webkit-slider-thumb
+			box-shadow: 0px 5px 10px -2px rgba(0, 0, 0, 0.3)
+	&__button
+		width: 240px
+		height: 54px
+		border-radius: 5px
+		display: flex
+		justify-content: center
+		align-items: center
+		margin: 100px auto 0
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16)
+		background-color: #f7f7f7
+		color: #4e4e4e
+		font-size: 1.4rem
+	&__option
+		margin-top: 80px
+		display: flex
+		justify-content: space-between
+		&-body
+			font-size: 1.4rem
+			color: #4e4e4e
