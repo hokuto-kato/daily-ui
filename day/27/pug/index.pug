@@ -1,0 +1,31 @@
+- contentName = "Daily UI - 27"
+doctype html
+html(lang="ja")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
+		meta(name="description" content=contentName)
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		title !{contentName}
+	body
+		header.header
+			h1.header__heading Daily UI 27
+		main.main
+			p.main__body あなたはこのサービスを人に勧める可能性はどのくらいありますか？
+			ul.main__list
+				li.main__list-item
+					input.main__list-item-input.visually-hidden(id="highly" type="radio" name="recommend")
+					label.main__list-item-label(for="highly") とても勧めてみたい
+				li.main__list-item
+					input.main__list-item-input.visually-hidden(id="so-so" type="radio" name="recommend")
+					label.main__list-item-label(for="so-so") まぁまぁ勧めてみたい
+				li.main__list-item
+					input.main__list-item-input.visually-hidden(id="little" type="radio" name="recommend")
+					label.main__list-item-label(for="little") ほんのちょっとだけ勧めてみたい
+				li.main__list-item
+					input.main__list-item-input.visually-hidden(id="dont" type="radio" name="recommend")
+					label.main__list-item-label(for="dont") 勧めたくない
+				li.main__list-item
+					input.main__list-item-input.visually-hidden(id="stop" type="radio" name="recommend")
+					label.main__list-item-label(for="stop") 他の勧誘も全力で阻止したい
+			a.main__button(href="#") 次へ

@@ -1,0 +1,68 @@
+.header
+	width: 100%
+	height: 60px
+	display: flex
+	align-items: center
+	justify-content: center
+	background-color: #4a2881
+	position: relative
+	&__heading
+		font-size: 2.4rem
+		font-weight: bold
+		font-family: calibri,sans-serif
+		color: #fff
+		font-style: italic
+.main
+	padding: 25px
+	&__body
+		color: #111
+		font-size: 1.5rem
+		margin-top: 35px
+		line-height: 1.71
+		letter-spacing: 0.23px
+	&__list
+		margin-top: 30px
+		&-item
+			&:nth-child(n+2)
+				margin-top: 25px
+			&-input
+				&:checked + .main__list-item-label:after
+					transform: scale(1)
+			&-label
+				color: #111
+				font-size: 1.5rem
+				display: flex
+				align-items: center
+				position: relative
+				&:before
+					content: ""
+					display: block
+					width: 32px
+					height: 32px
+					border: solid 1px #a2a2a2
+					border-radius: 50%
+					margin-right: 10px
+				&:after
+					content: ""
+					display: block
+					width: 22px
+					height: 22px
+					border-radius: 50%
+					position: absolute
+					top: 5px
+					left: 5px
+					background-color: #4a2881
+					transform: scale(0)
+					transition: all .2s ease-out
+	&__button
+		width: 240px
+		height: 54px
+		border-radius: 5px
+		box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.16)
+		background-color: #f7f7f7
+		color: #111
+		font-size: 1.5rem
+		display: flex
+		justify-content: center
+		align-items: center
+		margin: 70px auto 0
