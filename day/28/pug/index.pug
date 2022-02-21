@@ -1,0 +1,28 @@
+- contentName = "Daily UI - 28"
+- slideAlt = ["犬のイメージ","カモメのイメージ","イグアナのイメージ"]
+doctype html
+html(lang="ja")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
+		meta(name="description" content=contentName)
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		title !{contentName}
+	body
+		header.header
+			h1.header__heading Daily UI 28
+		main.main
+			.container
+				.glide(data-glide)
+					.glide__track(data-glide-el="track")
+						ul.glide__slides
+							each item, index in slideAlt
+								li.glide__slide
+									picture
+										source(srcset=require(`~/img/img0${index+1}.webp`) type="image/webp")
+										img.glide__slide-img(src=require(
+											`~/img/img0${index+1}.png`) alt=item width="310" height="379")
+			.glide__controls(data-glide-el="controls[nav]")
+				button.glide__controls-item.is-active(data-glide-dir="=0" aria-label="犬のイメージのスライドコントローラー")
+				button.glide__controls-item(data-glide-dir="=1" aria-label="カモメのイメージのスライドコントローラー")
+				button.glide__controls-item(data-glide-dir="=2" aria-label="イグアナのイメージのスライドコントローラー")

@@ -1,0 +1,67 @@
+.header
+	width: 100%
+	height: 60px
+	display: flex
+	align-items: center
+	justify-content: center
+	background-color: #2f4c5a
+	position: relative
+	&__heading
+		font-size: 2.4rem
+		font-weight: bold
+		font-family: calibri, sans-serif
+		color: #fff
+		font-style: italic
+.container
+	position: relative
+	&:before
+		content: ''
+		display: block
+		width: 342.5px
+		height: 377px
+		background-repeat: no-repeat
+		background-position: 0 0
+		position: absolute
+		top: 0
+		left: 50%
+		transform: translateX(-171.25px)
+		+sprite("bg")
+.main
+	height: calc(100vh - 60px)
+	background-image: linear-gradient(to bottom, #8bb1ab, #2b7fa5)
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+.glide
+	width: 310.8px
+	margin: 0 auto
+	background-size: cover
+	&__slides
+		transform: none !important
+		width: auto !important
+		display: grid
+		grid-template-areas: 'slide'
+	&__slide
+		position: relative
+		opacity: 0
+		transition: opacity 1s ease-out
+		grid-area: slide
+		&--active
+			z-index: 1
+			opacity: 1
+		&-img
+			width: 100%
+			height: auto
+			user-select: none
+	&__controls
+		display: flex
+		justify-content: center
+		&-item
+			width: 10px
+			height: 10px
+			border-radius: 50%
+			background-color: rgba(255, 255, 255, .25)
+			&.is-active
+				background-color: rgba(255, 255, 255, 1)
+			&:nth-child(n+2)
+				margin-left: 20px
