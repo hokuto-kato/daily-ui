@@ -1,0 +1,62 @@
+.header
+	width: 100%
+	height: 60px
+	display: flex
+	align-items: center
+	justify-content: center
+	background-color: #4a2881
+	position: relative
+	&__heading
+		font-size: 2.4rem
+		font-weight: bold
+		font-family: calibri,sans-serif
+		color: #fff
+	font-style: italic
+.main
+	height: calc(100vh - 60px)
+	display: flex
+	flex-direction: column
+	justify-content: center
+	&__body
+		font-size: 20rem
+		text-align: center
+		color: #aaa
+		font-weight: bold
+		transition: all .2s cubic-bezier(0.215, 0.610, 0.355, 1.000)
+		&.is-active
+			color: #4a2881
+	&__slider
+		width: 100px
+		height: 36px
+		margin: 180px auto 0
+		position: relative
+		&-bar
+			width: 100%
+			height: 36px
+			background-color: #aaa
+			border-radius: 18px
+			position: absolute
+			top: 0
+			left: 0
+			z-index: 1
+			transition: all .2s cubic-bezier(0.215, 0.610, 0.355, 1.000)
+			&.is-active
+				background-color: #4a2881
+		&-switch
+			width: 42px
+			height: 42px
+			border-radius: 50%
+			box-shadow: 0 1px 5px 0 rgba(0, 0, 0, 0.16)
+			background-color: #fff
+			color: #aaa
+			display: flex
+			justify-content: center
+			align-items: center
+			position: absolute
+			top: -4px
+			left: 0
+			z-index: 2
+			transition: all .2s cubic-bezier(0.215, 0.610, 0.355, 1.000)
+			&.is-active
+				left: 59%
+				transform: rotate(360deg)
