@@ -7,12 +7,13 @@ html(lang="ja")
 		meta(name="description" content=contentName)
 		meta(http-equiv="X-UA-Compatible" content="ie=edge")
 		title !{contentName}
-	body
-		header.header
-			h1.header__title Daily UI 29
-		main.main
-			.container
-				picture
+	body.body
+		.container
+			header.header
+				h1.header__title Daily UI 29
+			main.main(data-main)
+				picture.main__img
 					source(srcset=require("~/img/img.webp") type="image/webp")
 					img.main__img(src=require("~/img/img.jpg") alt="猫のイメージ" width="314" height="491" data-img)
+			.main__range-wrap
 				input.main__range(type="range" min="0" max="1" step="0.1" value="0" aria-label="画像の透明度を変更するスライダー" data-range)
