@@ -1,9 +1,13 @@
+.container
+	width: 100%
+	margin: 0 auto
+	+mq-min("414px")
+		width: 414px
 .main
 	background-color: #eaeaea
 	display: flex
 	flex-direction: column
 	justify-content: center
-	padding-top: 30px
 	position: relative
 	height: 100vh
 	&__title
@@ -58,6 +62,10 @@
 	margin: 0 30px
 	border-radius: 5px
 	transform: translate(calc(-50% - 30px), -50%)
+	+mq-min("414px")
+		width: 414px
+		transform: translate(-207px, -50%)
+		margin: 0
 	&.is-active
 		opacity: 1
 	&__close
