@@ -44,7 +44,7 @@
 		"imagemin-optipng": "^8.0.0",
 		"imagemin-pngquant": "^9.0.2",
 		"imagemin-svgo": "^10.0.1",
-		"mini-css-extract-plugin": "2.4.7",
+		"mini-css-extract-plugin": "2.5.3",
 		"particles.js": "^2.0.0",
 		"postcss-loader": "^6.2.1",
 		"preload-js": "^0.6.3",
