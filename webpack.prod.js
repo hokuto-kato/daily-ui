@@ -5,10 +5,10 @@ const autoprefixer = require("autoprefixer")
 const TerserPlugin = require("terser-webpack-plugin")
 const ImageMinimizerPlugin = require("image-minimizer-webpack-plugin")
 // const workBoxWebpackPlugin = require("workbox-webpack-plugin")
-const dailyID = 23
+const dailyID = 31
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
-
+console.log("production build")
 module.exports = merge(common, {
 	mode: "production",
 	output: {
@@ -31,13 +31,12 @@ module.exports = merge(common, {
 				extractComments: false,
 			}),
 			new ImageMinimizerPlugin({
-				test: /\.(gif|svg)$/i,
+				test: /\.(gif)$/i,
 				minimizer: {
 					implementation: ImageMinimizerPlugin.imageminMinify,
 					options: {
 						plugins: [
 							["gifsicle", {}],
-							["svgo", {}],
 						],
 					},
 				},
