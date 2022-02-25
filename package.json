@@ -57,6 +57,7 @@
 		"simple-pug-loader": "^0.2.1",
 		"style-loader": "^3.3.1",
 		"svg-spritemap-webpack-plugin": "^4.4.0",
+		"swiper": "^8.0.6",
 		"terser-webpack-plugin": "^5.3.0",
 		"webfontloader": "^1.6.28",
 		"webpack": "^5.66.0",

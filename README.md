@@ -1,3 +1,4 @@
+
 # 概要
 毎日UIをコーディングしていくプロジェクト。  
 目標33日。
@@ -126,6 +127,10 @@ https://www.dropbox.com/s/1gmqlg6rg7sxwmy/30.mp4
 ## day31 = {device : "📱"}   
 https://hokuto-kato.github.io/daily-ui/31/  
 https://www.dropbox.com/s/ybs055w0a59hpwq/31.mp4
+
+## day32 = {device : "📱"}   
+https://hokuto-kato.github.io/daily-ui/32/  
+https://www.dropbox.com/s/otc8xpmp1jkjkko/32.mp4
 
 # 開発
 ## node

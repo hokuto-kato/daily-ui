@@ -1,0 +1,27 @@
+-
+	contentName = "Daily UI - 32"
+	people = [
+		{ name: "Chloe Faith", },
+		{ name: "Kakalina Momo", },
+		{ name: "Milford Dakota", },
+		{ name: "Alexina Deana", },
+		{ name: "Mich Ludolf", },
+		{ name: "Abbey Sharise", },
+	]
+doctype html
+html(lang="ja")
+	head
+		meta(charset="UTF-8")
+		meta(name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0")
+		meta(name="description" content=contentName)
+		meta(http-equiv="X-UA-Compatible" content="ie=edge")
+		title !{contentName}
+	body
+		h1.header Daily UI 32
+		.swiper
+			.swiper-wrapper
+				each val, i in people
+					div(class=`swiper-slide swiper-body0${i + 1}`)
+			.swiper-pagination
+		.scroll(data-scroll)
+			p.scroll__body SCROLL
