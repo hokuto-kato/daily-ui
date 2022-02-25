@@ -2,12 +2,13 @@
 	font-family: calibri,sans-serif
 	font-size: 2.4rem
 	font-weight: bold
-	font-style: italic
-	color: #fff
+	color: #35728d
 	position: fixed
-	top: 20px
-	left: 20px
+	top: 10px
+	left: 10px
 	z-index: 2
+	background-color: #fff
+	padding: 5px 10px
 	+mq-min("428px")
 		font-size: 2.8em
 @for $i from 1 through 6
@@ -39,11 +40,11 @@
 			width: 10px
 			height: 10px
 			border-radius: 50%
-			border: 1px solid #c5d7e3
+			border: 1px solid #35728d
 			&:nth-child(n+2)
 				margin-top: 20px
 			&-active
-				background-color: #c5d7e3
+				background-color: #35728d
 .scroll
 	position: fixed
 	z-index: 2
@@ -51,8 +52,14 @@
 	bottom: 0
 	transform: translateX(-50%)
 	height: 70px
+	background-color: #fff
+	padding: 10px 10px 0
+	opacity: 1
+	transition: opacity 0.2s ease-out
 	+mq-min("428px")
 		height: 100px
+	&.is-fadeout
+		opacity: 0
 	&:after
 		content: ""
 		display: block
@@ -61,10 +68,10 @@
 		position: absolute
 		left: 50%
 		transform: translateX(-50%)
-		top: 22px
+		top: 34px
 		animation: slideDown 1.4s ease-out infinite
 		+mq-min("428px")
-			top: 25px
+			top: 40px
 	&__body
 		font-size: 1.4rem
 		font-family: calibri,sans-serif

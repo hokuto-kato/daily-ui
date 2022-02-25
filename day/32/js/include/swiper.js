@@ -15,6 +15,6 @@ export default function(){
 		},
 	})
 	swiper.on("activeIndexChange",()=>{
-		scroll.classList.add("visually-hidden")
+		scroll.classList.add("is-fadeout")
 	})
 }
