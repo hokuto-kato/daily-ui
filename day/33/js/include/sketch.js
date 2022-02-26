@@ -18,13 +18,11 @@ export default function(){
 			p.background(228)
 			p.stroke(24,0,209)
 			let waveform = fft.waveform()
-			p.beginShape()
 			for (let i = 0; i < waveform.length; i++) {
 				let x = p.map(i, 0, waveform.length, 0, p.width)
 				let y = p.map(waveform[i], -1, 0, p.height, p.height / 2)
 				p.circle(x, y, 0)
 			}
-			p.endShape()
 		}
 	}
 	trigger.addEventListener("click", (e) => {
