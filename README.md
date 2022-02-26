@@ -1,7 +1,7 @@
 
 # 概要
 毎日UIをコーディングしていくプロジェクト。  
-目標33日。
+目標33日 → 達成！
 
 # 成果物
 ## day01 = {device : "💻"}   
@@ -131,6 +131,10 @@ https://www.dropbox.com/s/ybs055w0a59hpwq/31.mp4
 ## day32 = {device : "📱"}   
 https://hokuto-kato.github.io/daily-ui/32/  
 https://www.dropbox.com/s/otc8xpmp1jkjkko/32.mp4
+
+## day33 = {device : "📱"}   
+https://hokuto-kato.github.io/daily-ui/33/  
+https://www.dropbox.com/s/tz9ng2on0jyiuri/33.mp4
 
 # 開発
 ## node

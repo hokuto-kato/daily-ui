@@ -1,0 +1,60 @@
+.main
+	height: 100vh
+	display: flex
+	flex-direction: column
+	justify-content: space-around
+	background-color: #e4e4e4
+	&__title
+		font-family: bilo, sans-serif
+		color: #1800d1
+		text-align: center
+		display: flex
+		flex-direction: column
+		justify-content: center
+		align-items: center
+		&-body
+			font-size: 2rem
+			font-weight: 400
+			+mq-min("428px")
+				font-size: 4rem
+				font-weight: 300
+		&-em
+			font-size: 10rem
+			font-weight: 100
+			+mq-min("428px")
+				font-size: 15rem
+	&__button
+		width: 76px
+		height: 76px
+		border-radius: 50%
+		background-color: #1800d1
+		display: flex
+		justify-content: center
+		align-items: center
+		margin: 0 auto
+		position: relative
+		transition: background .2s ease-out
+		&.is-active
+			background-color: #e4e4e4
+			.main__button-inner
+				animation: rotate 4s infinite linear
+				width: 76px
+				height: 76px
+				border-radius: 50%
+				border: 2px dashed #1800d1
+			&:before
+				+sprite("mic",(color:#1800d1))
+		&:before
+			content: ''
+			display: block
+			+sprite("mic",(color:#fff))
+			width: 30px
+			height: 42px
+			position: absolute
+			top: 50%
+			left: 50%
+			transform: translate(-50%, -50%)
+	&__audio
+		width: 100%
+		height: 40vh
+		overflow: hidden

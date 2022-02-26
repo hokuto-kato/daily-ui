@@ -1,0 +1,73 @@
+$sprites: (
+    'mic': "data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg'%3e%3cpath d='M15 0a6.33 6.33 0 0 1 4.546 1.942 6.74 6.74 0 0 1 1.883 4.69v13.263a6.74 6.74 0 0 1-1.883 4.689A6.33 6.33 0 0 1 15 26.526a6.33 6.33 0 0 1-4.546-1.942 6.74 6.74 0 0 1-1.883-4.69V6.633a6.74 6.74 0 0 1 1.883-4.69A6.33 6.33 0 0 1 15 0Zm15 19.895c0 7.803-5.593 14.235-12.857 15.319V42h-4.286v-6.786C5.593 34.13 0 27.698 0 19.894h4.286c0 2.932 1.129 5.743 3.138 7.816 2.01 2.073 4.734 3.237 7.576 3.237 2.842 0 5.567-1.164 7.576-3.237 2.01-2.073 3.138-4.884 3.138-7.815H30Z' fill='___color___'/%3e%3c/svg%3e"
+);
+
+$sizes: (
+    'mic': (
+        'width': 30px,
+        'height': 42px
+    )
+);
+
+$variables: (
+    'mic': (
+        'color': 'white'
+    )
+);
+
+// https://github.com/waldemarfm/sass-svg-uri/blob/v1.0.0/_svg-uri.scss
+@function sprite-str-replace($string, $search, $replace: '') {
+    $index: str-index($string, $search);
+
+    @if type-of($replace) == 'null' {
+        $replace: '';
+    }
+
+    @if ( $index ) {
+        @return str-slice($string, 1, $index - 1) + $replace + sprite-str-replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    }
+
+    @return $string;
+}
+
+@function sprite-svg-uri($value) {
+    $output: $value;
+
+    $output: sprite-str-replace($output, '"', "'");
+    $output: sprite-str-replace($output, '<', '%3C');
+    $output: sprite-str-replace($output, '>', '%3E');
+    $output: sprite-str-replace($output, '&', '%26');
+    $output: sprite-str-replace($output, '#', '%23');
+
+    @return $output;
+}
+
+@mixin sprite($name, $user-variables: (), $include-size: false) {
+    $sprite: map-get($sprites, $name);
+
+    // Inject variables
+    $default-variables: map-get($variables, $name);
+    @if type-of($default-variables) == 'map' {
+        @each $key, $value in map-merge($default-variables, $user-variables) {
+            @if ( not map-has-key($default-variables, $key) ) {
+                @warn 'Sprite \'#{$name}\' does not support variable named \'#{$key}\'';
+            }
+
+            $sprite: sprite-str-replace($sprite, '___#{$key}___', sprite-svg-uri(quote(#{$value})));
+        }
+    } @else if type-of($user-variables) == 'map' {
+        @warn 'Sprite \'#{$name}\' does not contain any variables';
+    }
+
+    background: url($sprite) center no-repeat;
+
+    @if $include-size {
+        $size: map-get($sizes, $name);
+        @if $include-size == true {
+            background-size: map-get($size, width) map-get($size, height);
+        } @else if $include-size == 'box' {
+            width: map-get($size, width);
+            height: map-get($size, height);
+        }
+    }
+}
