@@ -8,7 +8,7 @@ const pug = globule.find("./src/pug/*.pug", {
 })
 const svg = globule.find("./src/img/*.svg").length
 
-const dailyID = 1
+const dailyID = 2
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 const yellow = "\u001b[33m"
@@ -73,7 +73,7 @@ pug.forEach((template) => {
 			template: template,
 			inject: true,
 			alwaysWriteToDisk: true,
-			favicon: `./src/favicon/favicon.ico`,
+			favicon: `./src/favicon/favicon.svg`,
 		}),
 	)
 })
