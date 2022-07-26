@@ -26,7 +26,6 @@ export default function() {
 		const percent = Math.floor(event.progress * 100)
 		progressNumber.textContent = percent.toString()
 		progressNumber.style.opacity = `calc(${progress} + 0.2)`
-		progressNumber.style.transform = `translate(-50%, -50%) rotate(${percent * 3.6}deg)`
 		progressBar.style.opaicty = `calc(${progress} + 0.2)`
 		progressBar.style.width = `${percent}%`
 	}
