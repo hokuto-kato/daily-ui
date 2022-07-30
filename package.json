@@ -8,7 +8,8 @@
 		"build": "webpack --config ./webpack.prod.js",
 		"up": "node ./task/up.js",
 		"down": "node ./task/down.js",
-		"default": "node ./task/default"
+		"default": "node ./task/default",
+		"webp": "node task/convertWebp.mjs"
 	},
 	"repository": {
 		"type": "git",
@@ -27,7 +28,7 @@
 		"@glidejs/glide": "^3.5.2",
 		"@squoosh/cli": "^0.7.2",
 		"@squoosh/lib": "^0.4.0",
-		"autoprefixer": "^10.4.7",
+		"autoprefixer": "^10.4.8",
 		"babel-loader": "^8.2.5",
 		"cpx": "^1.5.0",
 		"css-loader": "^6.7.1",
