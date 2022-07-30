@@ -1,3 +1,5 @@
+@use "./mixin" as *
+
 .container
 	background-color: #fafafa
 .content
@@ -16,6 +18,7 @@
 			bottom: -12px
 .carousel
 	margin-top: 25px
+	padding-right: 14%
 	&__img
 		width: 100%
 		vertical-align: top
@@ -33,8 +36,8 @@
 					position: absolute
 					left: 0
 					bottom: 0
-					border-top: 30px solid transparent
-					border-left: 30px solid transparent
+					border-top: 30px solid #fff
+					border-left: 30px solid #fff
 					border-right: 30px solid #000
 					border-bottom: 30px solid #000
 					z-index: 1
@@ -58,21 +61,19 @@
 					bottom: 7px
 					z-index: 2
 					font-family: calibri, sans-serif
-	&__indicator--dot-body
-		width: 100%
-		display: flex
-		justify-content: center
-		margin-top: 35px
-		li
-			width: 10px
-			height: 10px
-			background-color: #C2C2C2
-			border-radius: 50%
-			&:nth-child(n+2)
-				margin-left: 20px
-			&.slick-active
-				background-color: #333
-.slick-slide
-	margin-right: 20px
-.slick-list
-	padding-right: 14%
+			&--dot
+				display: flex
+				width: 100%
+				justify-content: center
+				margin-top: 35px
+				& .swiper-pagination-bullet
+					width: 10px
+					height: 10px
+					background-color: #C2C2C2
+					border-radius: 50%
+					+hover
+						cursor: pointer
+					&:nth-child(n+2)
+						margin-left: 20px
+					&.swiper-pagination-bullet-active
+						background-color: #333

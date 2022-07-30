@@ -13,19 +13,29 @@ html(lang="ja")
 				.content
 					h1.main__title Daily UI
 					h2.main__title--sub 05
-					.carousel
-						.carousel__body(data-carousel)
-							.carousel__item
-								img.carousel__img(src=require("~/img/img01.jpg"), alt="床屋さんのイメージ01")
-							.carousel__item
-								img.carousel__img(src=require("~/img/img02.jpg"), alt="床屋さんのイメージ02")
-							.carousel__item
-								img.carousel__img(src=require("~/img/img03.jpg"), alt="床屋さんのイメージ03")
-							.carousel__item
-								img.carousel__img(src=require("~/img/img04.jpg"), alt="床屋さんのイメージ04")
-							.carousel__item
-								img.carousel__img(src=require("~/img/img05.jpg"), alt="床屋さんのイメージ05")
+					.carousel.swiper
+						.carousel__body.swiper-wrapper(data-carousel-wrap)
+							.carousel__item.swiper-slide(data-carousel-item)
+								picture
+									source(srcset=require("~/img/img01.webp") type="image/webp")
+									img.carousel__img(src=require("~/img/img01.jpg") alt="床屋さんのイメージ01")
+							.carousel__item.swiper-slide(data-carousel-item)
+								picture
+									source(srcset=require("~/img/img02.webp") type="image/webp")
+									img.carousel__img(src=require("~/img/img02.jpg") alt="床屋さんのイメージ02")
+							.carousel__item.swiper-slide(data-carousel-item)
+								picture
+									source(srcset=require("~/img/img03.webp") type="image/webp")
+									img.carousel__img(src=require("~/img/img03.jpg") alt="床屋さんのイメージ03")
+							.carousel__item.swiper-slide(data-carousel-item)
+								picture
+									source(srcset=require("~/img/img04.webp") type="image/webp")
+									img.carousel__img(src=require("~/img/img04.jpg") alt="床屋さんのイメージ04")
+							.carousel__item.swiper-slide(data-carousel-item)
+								picture
+									source(srcset=require("~/img/img05.webp") type="image/webp")
+									img.carousel__img(src=require("~/img/img05.jpg") alt="床屋さんのイメージ05")
 						.carousel__indicator--num
-							.carousel__indicator--num-index(data-caounsel-index) 01
-							.carousel__indicator--num-count(data-caounsel-count) 05
-				.carousel__indicator--dot(data-carousel-dot)
+							.carousel__indicator--num-index(data-carousel-index) 01
+							.carousel__indicator--num-count(data-carousel-count)
+				.carousel__indicator--dot.swiper-pagination

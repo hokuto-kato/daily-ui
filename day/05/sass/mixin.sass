@@ -8,3 +8,8 @@
 	font-family: calibri, sans-serif
 	font-weight: bold
 	font-style: italic
+
+@mixin hover()
+	@media(any-hover)
+		&:hover
+			@content

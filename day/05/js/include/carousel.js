@@ -1,40 +1,34 @@
-import $ from "jquery"
-import slick from "slick-carousel"
+import Swiper, { Pagination } from "swiper"
 
-const $carousel = $("[data-carousel]")
-const $carouselDot = $("[data-carousel-dot]")
-const $carouselIndex = $("[data-caounsel-index]")
-const $carouselCount = $("[data-caounsel-count]")
-let carouselIndex = 0
-let carouselCount = 0
-let carouselIndexPad = 0
-let carouselCountPad = 0
-
-export default function() {
-	const setIndicatorNum = () => {
-		$carouselIndex.text(carouselIndexPad)
-		$carouselCount.text(carouselCountPad)
+export default function(){
+	const indexEl = document.querySelector("[data-carousel-index]")
+	const countEl = document.querySelector("[data-carousel-count]")
+	const wrapEl = document.querySelector("[data-carousel-wrap]")
+	const itemLength = wrapEl.querySelectorAll("[data-carousel-item]").length
+	const init = () => {
+		countEl.textContent = itemLength.toString().padStart(2, "0")
 	}
-	$carousel.on("init", (event, slick) => {
-		carouselIndex = slick.currentSlide + 1
-		carouselIndexPad = String(carouselIndex).padStart(2, "0")
-		carouselCount = slick.slideCount
-		carouselCountPad = String(carouselCount).padStart(2, "0")
-		setIndicatorNum()
-	})
-	$carousel.on("afterChange", (event, slick) => {
-		carouselIndex = slick.currentSlide + 1
-		carouselIndexPad = String(carouselIndex).padStart(2, "0")
-		setIndicatorNum()
-	})
-	$carousel.slick({
-		dots: true,
-		dotsClass: "carousel__indicator--dot-body",
-		appendDots: $carouselDot,
-		centerPadding: "10%",
-		arrows: false,
-		customPaging: function() {
-			return $(`<button type="button">`)
+	const changeIndex = () => {
+		const index = swiper.realIndex + 1
+		indexEl.textContent = index.toString().padStart(2, "0")
+	}
+	const swiper = new Swiper(".swiper", {
+		modules: [Pagination],
+		loop: true,
+		spaceBetween: 20,
+		grabCursor: true,
+		centeredSlides: true,
+		pagination: {
+			el: ".swiper-pagination",
+			clickable: true,
 		},
+		on: {
+			beforeInit: () => {
+				init()
+			},
+		},
+	})
+	swiper.on("slideChange", () => {
+		changeIndex()
 	})
 }
