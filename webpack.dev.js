@@ -3,7 +3,7 @@ const common = require("./webpack.common")
 const MiniCssExtractPlugin = require("mini-css-extract-plugin")
 const autoprefixer = require("autoprefixer")
 const TerserPlugin = require("terser-webpack-plugin")
-const dailyID = 2
+const dailyID = 31
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 
@@ -30,13 +30,6 @@ module.exports = merge(common, {
 	},
 	module: {
 		rules: [
-			{
-				test: /\.(jpe?g|png|gif|svg|webp)$/i,
-				type: "asset/resource",
-				generator: {
-					filename: "./img/[name][ext]",
-				},
-			},
 			{
 				test: /\.(sass|scss)$/i,
 				use: [

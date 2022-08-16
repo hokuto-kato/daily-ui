@@ -8,7 +8,7 @@ const pug = globule.find("./src/pug/*.pug", {
 })
 const svg = globule.find("./src/img/*.svg").length
 
-const dailyID = 2
+const dailyID = 31
 const dalyIDPad = String(dailyID).padStart(2, "0")
 const buildPath = `${__dirname}/docs/${dalyIDPad}/`
 const yellow = "\u001b[33m"
@@ -34,6 +34,20 @@ const app = {
 	},
 	module: {
 		rules: [
+			{
+				test: /\.(jpe?g|png|gif|svg|webp)$/i,
+				type: "asset/resource",
+				generator: {
+					filename: "./img/[name][ext]",
+				},
+			},
+			{
+				test: /\.(mp4|webm)$/i,
+				type: "asset/resource",
+				generator: {
+					filename: "./mov/[name][ext]",
+				},
+			},
 			{
 				test: /\.js$/i,
 				loader: "babel-loader",
