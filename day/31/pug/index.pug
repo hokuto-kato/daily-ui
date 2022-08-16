@@ -10,8 +10,8 @@ html(lang="ja")
 	body
 		#particles-js.bg
 		main.main
-			h1.main__title Daily UI 31 : JELLY FISH
 			.main__img
 				picture
-					source(srcset=require("~/img/img.webp") type="image/webp")
-					img.main__img-body(src=require("~/img/img.jpg") alt="クラゲのイメージ" width="960" height="1128")
+					video.main__img-body(height="1128" loop="true" autoplay muted playsinline)
+						source(src=require("~/mov/jellyfish.webm") type="video/webm")
+						source(src=require("~/mov/jellyfish.mp4") type="video/mp4")
