@@ -137,9 +137,6 @@ https://hokuto-kato.github.io/daily-ui/33/
 https://www.dropbox.com/s/tz9ng2on0jyiuri/33.mp4
 
 # 開発
-## node
-v16.13.2
-
 ## dailyIDの切り替え
 ### デフォルト設定
 ```
@@ -165,4 +162,3 @@ $ yarn dev
 ```
 $ yarn build
 ```
-
